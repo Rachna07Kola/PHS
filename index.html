@@ -9,39 +9,295 @@
     <title>Responsive Portfolio Website - Bedimcode</title>
     <style>
         /* ... (Your existing CSS from the first code block) ... */
-        /* Added CSS for theme switching */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            color: var(--white-color);
-            cursor: pointer;
-            z-index: 1001;
-        }
-        .dark-theme {
-            --body-color: hsl(var(--hue), 100%, 8%);
-            --black-color: hsl(0, 0%, 98%);
-            --text-color: hsl(var(--hue), 2%, 30%);
-        }
-        .skill__item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-        .skill__item.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .portfolio__item {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-        .portfolio__item.show {
-            opacity: 1;
-            transform: scale(1);
-        }
+/* style.css */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #111;
+    color: #eee;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+header {
+    background-color: #222;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #6c63ff; /* Highlight color on hover */
+}
+
+.social-icons a {
+    color: #eee;
+    margin-left: 15px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    color: #6c63ff; /* Highlight color on hover */
+}
+.social-icons svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    position: relative;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 40px;
+    min-width: 300px; /* Ensure content doesn't get too squished */
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    white-space: nowrap; /* Prevent text from wrapping during typing animation */
+    overflow: hidden; /* Hide overflowing text during typing animation */
+    border-right: .15em solid orange; /* Blinking cursor for typing effect */
+    animation: typing 3.5s steps(30, end) forwards, blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+.hero p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button.primary {
+    background-color: #6c63ff;
+    color: #fff;
+}
+
+.button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+}
+
+.button.secondary {
+    background-color: transparent;
+    color: #6c63ff;
+    border: 1px solid #6c63ff;
+}
+.button.secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
+}
+.button svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+    min-width: 300px; /* Ensure image doesn't get too squished */
+}
+
+.hero-image img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px; /* Add some rounded corners to the image */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+}
+
+.circular-badge {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.2;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.circular-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.circular-badge .contact-button {
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.circular-badge .contact-button:hover {
+    background-color: #5650c7;
+}
+
+.lightbulb {
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+    width: 80px;
+}
+
+.lightbulb img {
+    max-width: 100%;
+    height: auto;
+    filter: brightness(1); /* Initial brightness */
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    animation: pulse 2s infinite alternate; /* Apply pulse animation */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    100% {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+    }
+}
+
+footer {
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    .hero-image {
+        text-align: center;
+    }
+    .circular-badge {
+        position: static; /* Remove absolute positioning */
+        margin: 20px auto; /* Center it */
+    }
+    .lightbulb {
+        position: static; /* Remove absolute positioning */
+        width: 60px;
+        margin: 20px auto; /* Center it */
+    }
+    nav ul {
+        margin-top: 10px;
+    }
+    nav ul li {
+        margin-left: 10px;
+    }
+    .hero h1 {
+        white-space: normal; /* Allow text to wrap on smaller screens */
+        border-right: none; /* Remove blinking cursor */
+        animation: none; /* Disable typing animation on small screens */
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 0.9em;
+    }
+    .hero-buttons a {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+    .circular-badge {
+        width: 120px;
+        height: 120px;
+        font-size: 0.8em;
+    }
+    .circular-badge .contact-button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+    .lightbulb {
+        width: 50px;
+    }
+}
     </style>
 </head>
 <body>
