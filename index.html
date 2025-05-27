@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ... (Your original simpler CSS) ... */
+        .lightbulb img {
+            /* ... (Original styles) ... */
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                filter: brightness(1);
+                transform: scale(1);
+            }
+            100% {
+                filter: brightness(1.2);
+                transform: scale(1.05);
+            }
+        }
+
+        .circular-badge {
+            /* ... (Original styles) ... */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .circular-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-content h1 {
+            overflow: hidden; /* Ensures the content is clipped if longer than
