@@ -3,589 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <title>My portfolio</title>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* ... (Your existing CSS from the first code block) ... */
-/* style.css */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #111;
+            color: #eee;
+        }
 
-body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: #111;
-    color: #eee;
-    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
-}
+        header {
+            background-color: #222;
+            padding: 20px;
+        }
 
-header {
-    background-color: #222;
-    padding: 20px;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
+        nav ul li {
+            margin-left: 20px;
+        }
 
-nav ul li {
-    margin-left: 20px;
-}
+        nav ul li a {
+            color: #eee;
+            text-decoration: none;
+        }
 
-nav ul li a {
-    color: #eee;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .social-icons a {
+            color: #eee;
+            margin-left: 15px;
+            font-size: 1.2em;
+        }
+        .social-icons svg {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
 
-nav ul li a:hover {
-    color: #6c63ff; /* Highlight color on hover */
-}
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            position: relative;
+        }
 
-.social-icons a {
-    color: #eee;
-    margin-left: 15px;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-.social-icons a:hover {
-    color: #6c63ff; /* Highlight color on hover */
-}
-.social-icons svg {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-}
+        .hero-content {
+            flex: 1;
+            padding-right: 40px;
+        }
 
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
-    position: relative;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-}
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflowing text */
+            border-right: .15em solid orange; /* Blinking cursor */
+            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+        }
 
-.hero-content {
-    flex: 1;
-    padding-right: 40px;
-    min-width: 300px; /* Ensure content doesn't get too squished */
-}
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
 
-.hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    white-space: nowrap; /* Prevent text from wrapping during typing animation */
-    overflow: hidden; /* Hide overflowing text during typing animation */
-    border-right: .15em solid orange; /* Blinking cursor for typing effect */
-    animation: typing 3.5s steps(30, end) forwards, blink-caret .75s step-end infinite;
-}
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
+        .hero p {
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
 
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
-}
+        .hero-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
 
-.hero p {
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
+        .button.primary {
+            background-color: #6c63ff;
+            color: #fff;
+        }
 
-.hero-buttons a {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .button.secondary {
+            background-color: transparent;
+            color: #6c63ff;
+            border: 1px solid #6c63ff;
+        }
+        .button svg {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
 
-.button.primary {
-    background-color: #6c63ff;
-    color: #fff;
-}
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
 
-.button.primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
-}
+        .hero-image img {
+            max-width: 400px;
+            height: auto;
+        }
 
-.button.secondary {
-    background-color: transparent;
-    color: #6c63ff;
-    border: 1px solid #6c63ff;
-}
-.button.secondary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
-}
-.button svg {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-left: 5px;
-}
+        .circular-badge {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1.2;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
 
-.hero-image {
-    flex: 1;
-    text-align: right;
-    min-width: 300px; /* Ensure image doesn't get too squished */
-}
+        .circular-badge:hover {
+            transform: scale(1.05);
+        }
 
-.hero-image img {
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px; /* Add some rounded corners to the image */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
-}
+        .circular-badge .contact-button {
+            background-color: #6c63ff;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease-in-out;
+        }
 
-.circular-badge {
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-weight: bold;
-    line-height: 1.2;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
+        .circular-badge .contact-button:hover {
+            background-color: #5650c7;
+        }
 
-.circular-badge:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
+        .lightbulb {
+            position: absolute;
+            right: 50px;
+            bottom: 30px;
+            width: 80px;
+        }
 
-.circular-badge .contact-button {
-    background-color: #6c63ff;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease-in-out;
-}
+        .lightbulb img {
+            max-width: 100%;
+            height: auto;
+            filter: brightness(1); /* Initial brightness */
+            transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+            animation: pulse 2s infinite alternate;
+        }
 
-.circular-badge .contact-button:hover {
-    background-color: #5650c7;
-}
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
 
-.lightbulb {
-    position: absolute;
-    right: 50px;
-    bottom: 30px;
-    width: 80px;
-}
+        footer {
+            background-color: #222;
+            color: #eee;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
 
-.lightbulb img {
-    max-width: 100%;
-    height: auto;
-    filter: brightness(1); /* Initial brightness */
-    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-    animation: pulse 2s infinite alternate; /* Apply pulse animation */
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        filter: brightness(1);
-    }
-    100% {
-        transform: scale(1.05);
-        filter: brightness(1.2);
-    }
-}
-
-footer {
-    background-color: #222;
-    color: #eee;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-content {
-        padding-right: 0;
-        margin-bottom: 30px;
-    }
-    .hero-image {
-        text-align: center;
-    }
-    .circular-badge {
-        position: static; /* Remove absolute positioning */
-        margin: 20px auto; /* Center it */
-    }
-    .lightbulb {
-        position: static; /* Remove absolute positioning */
-        width: 60px;
-        margin: 20px auto; /* Center it */
-    }
-    nav ul {
-        margin-top: 10px;
-    }
-    nav ul li {
-        margin-left: 10px;
-    }
-    .hero h1 {
-        white-space: normal; /* Allow text to wrap on smaller screens */
-        border-right: none; /* Remove blinking cursor */
-        animation: none; /* Disable typing animation on small screens */
-    }
-}
-
-/* Further adjustments for very small screens */
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2em;
-    }
-    .hero p {
-        font-size: 0.9em;
-    }
-    .hero-buttons a {
-        padding: 8px 15px;
-        font-size: 0.9em;
-    }
-    .circular-badge {
-        width: 120px;
-        height: 120px;
-        font-size: 0.8em;
-    }
-    .circular-badge .contact-button {
-        padding: 6px 12px;
-        font-size: 0.8em;
-    }
-    .lightbulb {
-        width: 50px;
-    }
-}
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            .hero-image {
+                text-align: center;
+            }
+            .circular-badge {
+                position: static;
+                margin: 20px auto;
+            }
+            .lightbulb {
+                position: static;
+                width: 60px;
+                margin: 20px auto;
+            }
+            nav ul {
+                margin-top: 10px;
+            }
+            nav ul li {
+                margin-left: 10px;
+            }
+            .hero h1 {
+                white-space: normal;
+                border-right: none;
+                animation: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="theme-toggle" id="theme-toggle">
-        <i class="ri-moon-line"></i>
-    </div>
-
-    <nav class="nav">
-        <div class="nav__container">
-            <a href="#" class="nav__logo">Portfolio</a>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">About</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#skills" class="nav__link">Skills</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#portfolio" class="nav__link">Portfolio</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contact</a>
-                    </li>
-                </ul>
+    <header>
+        <nav>
+            <div class="logo">Your Logo</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h-2v-6h2v6zm1 0h-1v-6h1v6zm3 0h-2v-6h2v6zm-2-8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></a>
+                <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.66V8.5H7.5v10.3h3.44v-5.3c0-.25.02-.49.05-.73.14-.73.48-1.43.92-2.04 2.1-1.41 3.64-.75 3.64 1.94v5.74H14.5z"/></svg></a>
+                <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.67-1.65 1.13-2.6 1.32.84-.5 1.49-1.3 1.8-2.26-.8.47-1.68.81-2.6 1-.79-.85-1.82-1.38-2.92-1.38-2.36 0-4.28 1.92-4.28 4.29 0 .34.04.67.13.98-3.56-.18-6.75-1.89-8.84-4.46-.37.63-.58 1.37-.58 2.15 0 1.49.76 2.8 1.91 3.56-.71-.02-1.39-.22-1.98-.54v.06c0 2.07 1.47 3.8 3.42 4.2-.36.1-.74.16-1.12.16-.27 0-.54-.03-.79-.08.54 1.69 2.1 2.92 3.98 2.96-1.46 1.14-3.31 1.84-5.32 1.84-.34 0-.68-.02-1.02-.06 1.93 1.23 4.25 1.94 6.74 1.94 8.09 0 12.52-6.73 12.52-12.56 0-.19 0-.38-.01-.57.86-.63 1.61-1.3 2.21-2.06z"/></svg></a>
             </div>
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="ri-menu-line"></i>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Turning Vision Into Reality With Code And Design.</h1>
+            <p>As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects, showcasing my expertise in React.js and web development.</p>
+            <div class="hero-buttons">
+                <a href="#" class="button primary">Resume <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h14v2zM14 11V4h-4v7H5l7 7 7-7h-5z"/></svg></a>
+                <a href="#" class="button secondary">Contact <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4v-6l8 3 8-3v6zm-8-8l-8-3V6l8 3 8-3v4l-8 3z"/></svg></a>
             </div>
         </div>
-    </nav>
-
-    <main class="main">
-        <section class="hero section" id="home">
-            <div class="hero__content">
-                <h1>Welcome to My Portfolio</h1>
-                <p>I'm a passionate web developer creating amazing digital experiences</p>
-                <a href="#about" class="hero__button">Discover More</a>
-            </div>
-        </section>
-
-        <section class="section" id="about">
-            <div class="container">
-                <h2 class="section__title">About Me</h2>
-                <div class="about__content">
-                    <div class="about__text">
-                        <p>Hello! I'm a passionate web developer with expertise in modern web technologies. I love creating beautiful, functional, and user-friendly websites and applications.</p>
-                        <p>With years of experience in front-end and back-end development, I bring ideas to life through clean code and innovative solutions.</p>
-                        <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
-                    </div>
-                    <div class="about__image">
-                        <div style="width: 300px; height: 300px; background: linear-gradient(45deg, var(--first-color), var(--first-color-alt)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                            <i class="ri-user-line" style="font-size: 8rem; color: var(--white-color);"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="skills">
-            <div class="container">
-                <h2 class="section__title">My Skills</h2>
-                <div class="skills__content">
-                    <div class="skill__item" data-skill="frontend">
-                        <i class="ri-html5-line skill__icon"></i>
-                        <h3 class="skill__title">Frontend Development</h3>
-                        <p>HTML5, CSS3, JavaScript, React, Vue.js</p>
-                    </div>
-                    <div class="skill__item" data-skill="backend">
-                        <i class="ri-server-line skill__icon"></i>
-                        <h3 class="skill__title">Backend Development</h3>
-                        <p>Node.js, Python, PHP, Database Management</p>
-                    </div>
-                    <div class="skill__item" data-skill="mobile">
-                        <i class="ri-smartphone-line skill__icon"></i>
-                        <h3 class="skill__title">Mobile Development</h3>
-                        <p>React Native, Flutter, Responsive Design</p>
-                    </div>
-                    <div class="skill__item" data-skill="uiux">
-                        <i class="ri-palette-line skill__icon"></i>
-                        <h3 class="skill__title">UI/UX Design</h3>
-                        <p>Figma, Adobe XD, User Experience Design</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="portfolio">
-            <div class="container">
-                <h2 class="section__title">My Portfolio</h2>
-                <div class="portfolio__content">
-                    <div class="portfolio__item">
-                        <div class="portfolio__image">
-                            <i class="ri-computer-line"></i>
-                        </div>
-                        <div class="portfolio__info">
-                            <h3 class="portfolio__title">E-commerce Website</h3>
-                            <p>A modern e-commerce platform built with React and Node.js</p>
-                            <a href="#" class="portfolio__link">View Project <i class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio__item">
-                        <div class="portfolio__image">
-                            <i class="ri-smartphone-line"></i>
-                        </div>
-                        <div class="portfolio__info">
-                            <h3 class="portfolio__title">Mobile App</h3>
-                            <p>Cross-platform mobile application using React Native</p>
-                            <a href="#" class="portfolio__link">View Project <i class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio__item">
-                        <div class="portfolio__image">
-                            <i class="ri-dashboard-line"></i>
-                        </div>
-                        <div class="portfolio__info">
-                            <h3 class="portfolio__title">Dashboard</h3>
-                            <p>Analytics dashboard with real-time data visualization</p>
-                            <a href="#" class="portfolio__link">View Project <i class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="contact">
-            <div class="container">
-                <h2 class="section__title">Contact Me</h2>
-                <div class="contact__content">
-                    <form class="contact__form" id="contact-form">
-                        <input type="text" placeholder="Your Name" class="contact__input" required>
-                        <input type="email" placeholder="Your Email" class="contact__input" required>
-                        <input type="text" placeholder="Subject" class="contact__input" required>
-                        <textarea placeholder="Your Message" class="contact__textarea" rows="7" required></textarea>
-                        <button type="submit" class="contact__button">
-                            Send Message <i class="ri-send-plane-line"></i>
-                        </button>
-                        <p class="contact__message"></p>
-                    </form>
-                </div>
-            </div>
-        </section>
+        <div class="hero-image">
+            <img src="developer.png" alt="Developer working on a laptop">
+        </div>
+        <div class="circular-badge">FULL-STACK<br>WEB<br>DEVELOPER<br><div class="contact-button">Contact</div></div>
+        <div class="lightbulb">
+            <img src="lightbulb.png" alt="Lightbulb">
+        </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__social">
-                <a href="#" class="footer__social-link">
-                    <i class="ri-facebook-line"></i>
-                </a>
-                <a href="#" class="footer__social-link">
-                    <i class="ri-twitter-line"></i>
-                </a>
-                <a href="#" class="footer__social-link">
-                    <i class="ri-instagram-line"></i>
-                </a>
-                <a href="#" class="footer__social-link">
-                    <i class="ri-linkedin-line"></i>
-                </a>
-                <a href="#" class="footer__social-link">
-                    <i class="ri-github-line"></i>
-                </a>
-            </div>
-            <p>&copy; 2024 Portfolio. All rights reserved.</p>
-        </div>
+    <footer>
+        <p>&copy; 2025 Your Name</p>
     </footer>
 
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="ri-arrow-up-line"></i>
-    </a>
-
     <script>
-        const navMenu = document.getElementById('nav-menu'),
-              navToggle = document.getElementById('nav-toggle'),
-              navLinks = document.querySelectorAll('.nav__link'),
-              scrollUp = document.getElementById('scroll-up'),
-              contactForm = document.getElementById('contact-form'),
-              contactMessage = document.querySelector('.contact__message'),
-              sections = document.querySelectorAll('section[id]'),
-              themeToggle = document.getElementById('theme-toggle'),
-              darkThemeClass = 'dark-theme';
-
-        /* Menu Show & Hide */
-        if (navToggle) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('show-menu');
-                navToggle.innerHTML = navMenu.classList.contains('show-menu') ? '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
-            });
+        // Animated Lightbulb
+        const lightbulb = document.querySelector('.lightbulb img');
+        if (lightbulb) {
+            // The pulsing animation is handled by CSS
         }
 
-        /* Close Menu on Link Click */
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('show-menu');
-                navToggle.innerHTML = '<i class="ri-menu-line"></i>';
-            });
-        });
-
-        /* Smooth Scrolling */
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        /* Scroll Up Button */
-        window.addEventListener('scroll', () => {
-            if (window.scrollY >= 350) {
-                scrollUp.classList.add('show-scroll');
-            } else {
-                scrollUp.classList.remove('show-scroll');
-            }
-        });
-
-        /* Contact Form Submission (Simulated) */
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // Simulate sending data
-                contactMessage.textContent = 'Message sent successfully!';
-                setTimeout(() => {
-                    contactMessage.textContent = '';
-                    contactForm.reset();
-                }, 3000);
-            });
+        // Circular Badge Hover Effect
+        const circularBadge = document.querySelector('.circular-badge');
+        if (circularBadge) {
+            // The hover effect is handled by CSS
         }
 
-        /* Active Link Highlighting */
-        window.addEventListener('scroll', () => {
-            const scrollY = window.pageYOffset;
-            sections.forEach(current => {
-                const sectionHeight = current.offsetHeight;
-                const sectionTop = current.offsetTop - 50;
-                const sectionId = current.getAttribute('id');
-                const navLink = document.querySelector(`.nav__link[href*=${sectionId}]`);
-
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    navLinks.forEach(link => link.classList.remove('active-link'));
-                    if (navLink) navLink.classList.add('active-link');
-                }
-            });
-        });
-
-        /* Scroll Reveal for Skills and Portfolio */
-        const sr = ScrollReveal({
-            origin: 'bottom',
-            distance: '60px',
-            duration: 2500,
-            delay: 400,
-            // reset: true // Uncomment to easily see animations again
-        });
-
-        sr.reveal('.about__content, .skills__content', {origin: 'left'});
-        sr.reveal('.about__image, .contact__form', {origin: 'right'});
-        sr.reveal('.hero__content, .section__title, .portfolio__content');
-
-        /* Dark/Light Theme */
-        const getCurrentTheme = () => document.body.classList.contains(darkThemeClass) ? 'dark' : 'light';
-        const getCurrentIcon = () => themeToggle.classList.contains('ri-moon-line') ? 'ri-sun-line' : 'ri-moon-line';
-
-        const setTheme = (themeName) => {
-            document.body.classList[themeName === 'dark' ? 'add' : 'remove'](darkThemeClass);
-            themeToggle.classList[themeName === 'dark' ? 'remove' : 'add']('ri-moon-line');
-            themeToggle.classList[themeName === 'dark' ? 'add' : 'remove']('ri-sun-line');
-            localStorage.setItem('selected-theme', themeName);
-        };
-
-        themeToggle.addEventListener('click', () => {
-            setTheme(getCurrentTheme() === 'light' ? 'dark' : 'light');
-        });
-
-        // Check for previously selected theme
-        const selectedTheme = localStorage.getItem('selected-theme');
-        if (selectedTheme) {
-            setTheme(selectedTheme);
-        } else {
-            // Default to light theme if no preference
-            setTheme('light');
+        // Typing Animation for Hero Title
+        const heroTitle = document.querySelector('.hero-content h1');
+        if (heroTitle) {
+            // The typing animation is handled by CSS
         }
     </script>
 </body>
