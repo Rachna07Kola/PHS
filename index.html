@@ -1,302 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            background-color: #111;
-            color: #eee;
-        }
-
-        header {
-            background-color: #222;
-            padding: 20px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: #eee;
-            text-decoration: none;
-        }
-
-        .social-icons a {
-            color: #eee;
-            margin-left: 15px;
-            font-size: 1.2em;
-        }
-        .social-icons svg {
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-        }
-
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-            position: relative;
-        }
-
-        .hero-content {
-            flex: 1;
-            padding-right: 40px;
-        }
-
-        .hero h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            white-space: nowrap; /* Prevent text from wrapping */
-            overflow: hidden; /* Hide overflowing text */
-            border-right: .15em solid orange; /* Blinking cursor */
-            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: orange; }
-        }
-
-        .hero p {
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons a {
-            display: inline-block;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .button.primary {
-            background-color: #6c63ff;
-            color: #fff;
-        }
-
-        .button.secondary {
-            background-color: transparent;
-            color: #6c63ff;
-            border: 1px solid #6c63ff;
-        }
-        .button svg {
-            width: 20px;
-            height: 20px;
-            vertical-align: middle;
-            margin-left: 5px;
-        }
-
-        .hero-image {
-            flex: 1;
-            text-align: right;
-        }
-
-        .hero-image img {
-            max-width: 400px;
-            height: auto;
-        }
-
-        .circular-badge {
-            position: absolute;
-            left: 20px;
-            bottom: 20px;
-            background-color: #333;
-            color: #fff;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-weight: bold;
-            line-height: 1.2;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
-
-        .circular-badge:hover {
-            transform: scale(1.05);
-        }
-
-        .circular-badge .contact-button {
-            background-color: #6c63ff;
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-size: 0.9em;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        .circular-badge .contact-button:hover {
-            background-color: #5650c7;
-        }
-
-        .lightbulb {
-            position: absolute;
-            right: 50px;
-            bottom: 30px;
-            width: 80px;
-        }
-
-        .lightbulb img {
-            max-width: 100%;
-            height: auto;
-            filter: brightness(1); /* Initial brightness */
-            transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-            animation: pulse 2s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.05);
-            }
-        }
-
-        footer {
-            background-color: #222;
-            color: #eee;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 900px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-content {
-                padding-right: 0;
-                margin-bottom: 30px;
-            }
-            .hero-image {
-                text-align: center;
-            }
-            .circular-badge {
-                position: static;
-                margin: 20px auto;
-            }
-            .lightbulb {
-                position: static;
-                width: 60px;
-                margin: 20px auto;
-            }
-            nav ul {
-                margin-top: 10px;
-            }
-            nav ul li {
-                margin-left: 10px;
-            }
-            .hero h1 {
-                white-space: normal;
-                border-right: none;
-                animation: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harshitha Sreiya Palaparthi - Portfolio</title>
+  <style>
+    /* Reset & base */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #111;
+      color: #eee;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      color: #ff66c4;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #ff66c4;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .contact-info {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .contact-info span,
+    .contact-info a {
+      margin-right: 1rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /* Navigation bar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 12px 0;
+      z-index: 1000;
+      border-bottom: 2px solid #ff66c4;
+    }
+    nav a {
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #ff66c4;
+      color: #111;
+      outline: none;
+    }
+    /* Offset content to avoid overlap with fixed nav */
+    body > *:not(nav) {
+      padding-top: 70px;
+    }
+    /* Sections */
+    section {
+      margin-bottom: 2rem;
+    }
+    /* Lists */
+    ul {
+      padding-left: 1.25rem;
+    }
+    /* Technical Skills Grid */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+      gap: 8px;
+      list-style: none;
+      padding-left: 0;
+    }
+    .skills-list li {
+      background: #222;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    /* Projects */
+    .project {
+      margin-bottom: 1rem;
+    }
+    .project h4 {
+      margin: 0.3rem 0 0.5rem;
+    }
+    /* Footer */
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #333;
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+      nav {
+        gap: 12px;
+        padding: 10px 0;
+      }
+      nav a {
+        padding: 5px 8px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Your Logo</div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-            </ul>
-            <div class="social-icons">
-                <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h-2v-6h2v6zm1 0h-1v-6h1v6zm3 0h-2v-6h2v6zm-2-8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></a>
-                <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.66V8.5H7.5v10.3h3.44v-5.3c0-.25.02-.49.05-.73.14-.73.48-1.43.92-2.04 2.1-1.41 3.64-.75 3.64 1.94v5.74H14.5z"/></svg></a>
-                <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.67-1.65 1.13-2.6 1.32.84-.5 1.49-1.3 1.8-2.26-.8.47-1.68.81-2.6 1-.79-.85-1.82-1.38-2.92-1.38-2.36 0-4.28 1.92-4.28 4.29 0 .34.04.67.13.98-3.56-.18-6.75-1.89-8.84-4.46-.37.63-.58 1.37-.58 2.15 0 1.49.76 2.8 1.91 3.56-.71-.02-1.39-.22-1.98-.54v.06c0 2.07 1.47 3.8 3.42 4.2-.36.1-.74.16-1.12.16-.27 0-.54-.03-.79-.08.54 1.69 2.1 2.92 3.98 2.96-1.46 1.14-3.31 1.84-5.32 1.84-.34 0-.68-.02-1.02-.06 1.93 1.23 4.25 1.94 6.74 1.94 8.09 0 12.52-6.73 12.52-12.56 0-.19 0-.38-.01-.57.86-.63 1.61-1.3 2.21-2.06z"/></svg></a>
-            </div>
-        </nav>
-    </header>
+  <nav aria-label="Primary navigation">
+    <a href="#summary">Summary</a>
+    <a href="#education">Education</a>
+    <a href="#technical-skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+  </nav>
 
-    <main class="hero">
-        <div class="hero-content">
-            <h1>Turning Vision Into Reality With Code And Design.</h1>
-            <p>As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects, showcasing my expertise in React.js and web development.</p>
-            <div class="hero-buttons">
-                <a href="#" class="button primary">Resume <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h14v2zM14 11V4h-4v7H5l7 7 7-7h-5z"/></svg></a>
-                <a href="#" class="button secondary">Contact <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4v-6l8 3 8-3v6zm-8-8l-8-3V6l8 3 8-3v4l-8 3z"/></svg></a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="developer.png" alt="Developer working on a laptop">
-        </div>
-        <div class="circular-badge">FULL-STACK<br>WEB<br>DEVELOPER<br><div class="contact-button">Contact</div></div>
-        <div class="lightbulb">
-            <img src="lightbulb.png" alt="Lightbulb">
-        </div>
-    </main>
+  <header>
+    <h1>Harshitha Sreiya Palaparthi</h1>
+    <div class="contact-info">
+      <span>📞 +1 636-829-9199</span>
+      <a href="mailto:harshithasrieya@gmail.com" aria-label="Email">📧 harshithasrieya@gmail.com</a>
+      <a href="https://linkedin.com/in/harshithasreiya" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">🔗 LinkedIn</a>
+      <a href="https://github.com/harshi1744" target="_blank" rel="noopener noreferrer" aria-label="GitHub">🐙 GitHub</a>
+      <span>Portfolio</span>
+    </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2025 Your Name</p>
-    </footer>
+  <section id="summary">
+    <h2>Summary</h2>
+    <p>
+      Master’s student in Business Analytics with strong skills in data modeling, data visualization, and business intelligence tools.
+      Experienced in AI-driven applications, front-end reporting, and KPI tracking. Available from December 2025 for full-time roles across the U.S.
+    </p>
+  </section>
 
-    <script>
-        // Animated Lightbulb
-        const lightbulb = document.querySelector('.lightbulb img');
-        if (lightbulb) {
-            // The pulsing animation is handled by CSS
-        }
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>University of North Texas</strong> — Master of Science, Business Analytics (Jan 2024 - Dec 2025), Texas, United States</li>
+      <li><strong>Osmania University, Hyderabad</strong> — Bachelor of Commerce, Computer Science (Jun 2020 - Apr 2023), Hyderabad, India</li>
+    </ul>
+  </section>
 
-        // Circular Badge Hover Effect
-        const circularBadge = document.querySelector('.circular-badge');
-        if (circularBadge) {
-            // The hover effect is handled by CSS
-        }
+  <section id="technical-skills">
+    <h2>Technical Skills</h2>
+    <ul class="skills-list">
+      <li>Python</li>
+      <li>Java</li>
+      <li>JavaScript</li>
+      <li>SQL</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Git & GitHub</li>
+      <li>MS Excel</li>
+      <li>Jupyter Notebook</li>
+      <li>MySQL</li>
+      <li>MongoDB</li>
+      <li>NumPy</li>
+      <li>Pandas</li>
+      <li>Microsoft Azure</li>
+      <li>Tableau</li>
+      <li>Power BI</li>
+      <li>Big Data</li>
+      <li>Google Cloud Platform (GCP)</li>
+      <li>DBMS</li>
+      <li>Machine Learning</li>
+      <li>Agile & Scrum</li>
+      <li>AngularJS</li>
+      <li>Maven</li>
+    </ul>
+  </section>
 
-        // Typing Animation for Hero Title
-        const heroTitle = document.querySelector('.hero-content h1');
-        if (heroTitle) {
-            // The typing animation is handled by CSS
-        }
-    </script>
+  <section id="experience">
+    <h2>Professional Experience</h2>
+
+    <article>
+      <h3>Entrepreneurship / Business Development Intern</h3>
+      <p><em>NSIC – Hyderabad, India (May 2022 – March 2023)</em></p>
+      <ul>
+        <li>Analyzed market trends, financial feasibility, and industrial awareness impacting small business growth.</li>
+        <li>Evaluated business growth patterns and developed insights to help small businesses make informed decisions.</li>
+        <li>Collected and analyzed sales, customer demand, and industry growth data; created financial models to assess viability.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Counselor / Data Insights Mentor</h3>
+      <p><em>Voice 4 Girls – India (Aug 2021 – March 2022)</em></p>
+      <ul>
+        <li>Mentored students, analyzed learning patterns, and provided insights on teaching strategies for improved engagement.</li>
+        <li>Conducted counseling sessions, assessed progress, and adapted mentoring using qualitative and quantitative analysis.</li>
+        <li>Enhanced students’ confidence, problem-solving, and decision-making skills through data-driven approaches.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="project">
+      <h4>Visualizing Global Trends in Child Malnutrition</h4>
+      <p><em>Tools: Tableau, Excel, SQL</em></p>
+      <ul>
+        <li>Developed an interactive Tableau dashboard showing child malnutrition trends by country, gender, urban-rural divide, and age groups.</li>
+        <li>Preprocessed data with null handling, deduplication, and normalization for accurate analysis.</li>
+        <li>Used advanced visualizations including dual-axis charts, box plots, and geographic maps to reveal disparities.</li>
+        <li>Enabled real-time data exploration to support public health interventions and policy planning.</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h4>Agentic AI Resume Screening System</h4>
+      <p><em>Technologies: Python, GPT-based LLMs, NLP</em></p>
+      <ul>
+        <li>Created an offline Hiring Assistant using Retrieval-Augmented Generation (RAG) and Light-Agent architecture.</li>
+        <li>Engineered semantic matching with SentenceTransformers and vector similarity search integrated with rubric-based scoring.</li>
+        <li>Implemented a Mistral-7B-Instruct chatbot for recruiter interaction and real-time rubric updates.</li>
+        <li>Built a secure, cost-efficient Streamlit web interface ensuring transparent candidate evaluation without cloud dependencies.</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h4>AI-Based Fraud Detection System in Banking</h4>
+      <p><em>Technologies: Python, Machine Learning, SHAP, LIME</em></p>
+      <ul>
+        <li>Developed real-time fraud detection to monitor banking transactions and reduce financial risk.</li>
+        <li>Applied supervised and unsupervised machine learning models for anomaly detection.</li>
+        <li>Used SHAP and LIME for model explainability, ensuring transparent decision-making and regulatory compliance.</li>
+        <li>Ensured secure data handling with AES-256 encryption, GDPR, and PCI DSS compliance.</li>
+      </ul>
+    </article>
+  </section>
+
+  <footer>
+    &copy; 2025 Harshitha Sreiya Palaparthi
+  </footer>
 </body>
 </html>
