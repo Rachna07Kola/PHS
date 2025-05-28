@@ -392,39 +392,292 @@
   font-size: 1rem;
 }
 
+/* Reset & Base */
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar Styles */
+.top-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  padding: 15px 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #6c63ff;
+}
+
+.nav-list {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-list li a {
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #6c63ff;
+  transition: width 0.3s;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  font-size: 28px;
+  display: none;
+  cursor: pointer;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    border-top: 1px solid #eee;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.projects-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Project Flex Container */
+.project-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-flex:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* Project Text Block */
+.project-block {
+  flex: 1 1 600px;
+}
+
+.project-block h3 {
+  color: #6c63ff;
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.project-block p {
+  margin-bottom: 10px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.project-block ul {
+  margin: 10px 0 20px 20px;
+  color: #555;
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* GIF Image Block */
+.gif-container {
+  flex: 0 1 300px;
+  text-align: center;
+}
+
+.gif-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.gif-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .project-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gif-container {
+    margin-top: 20px;
+  }
+
+  .project-block, .gif-container {
+    width: 100%;
+  }
+}
+
+
+/* About Section Styling */
+.about-section {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.about-content {
+  flex: 1 1 60%;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.about-projects {
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.about-projects li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.about-image {
+  flex: 1 1 35%;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-slide-in {
+  animation: slideIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+}
 
   </style>
   
 </head>
   
 <body>
-
-  <aside class="sidebar" data-sidebar>
-
-  <div class="sidebar-info">
-    <figure class="avatar-box">
-      <img src="https://thumbs.dreamstime.com/b/d-icon-avatar-cartoon-cute-freelancer-woman-working-online-learning-laptop-transparent-png-background-works-embodying-345422695.jpg" alt="Harshitha" width="80">
-    </figure>
-
-    <div class="info-content">
-      <h1 class="name" title="Harshitha">Harshitha</h1>
-      <p class="title">Business Analyst Graduate | Financial Analyst</p>
-    </div>
-
-    <button class="info_more-btn" data-sidebar-btn>
-      <span>Show Contacts</span>
-      <ion-icon name="chevron-down"></ion-icon>
-    </button>
-  </div>
-
-  <div class="sidebar-info_more">
-    <div class="separator"></div>
-
-    <!-- Navigation links section -->
-    <nav class="nav-links" aria-label="Primary navigation">
+  
+<header class="top-navbar">
+  <div class="container">
+    <div class="logo">Harshitha</div>
+    <nav class="nav" id="navbar">
       <ul class="nav-list">
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#summary">Career Summary</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#summary">Summary</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -432,45 +685,9 @@
         <li><a href="#leadership">Leadership</a></li>
       </ul>
     </nav>
-
-    <div class="separator"></div>
-
-    <!-- Contact Info -->
-    <ul class="contacts-list">
-      <li class="contact-item">
-        <div class="icon-box">
-          <ion-icon name="mail-outline"></ion-icon>
-        </div>
-        <div class="contact-info">
-          <p class="contact-title">Email</p>
-          <a href="mailto:harshithasrieya@gmail.com" class="contact-link"></a>
-        </div>
-      </li>
-
-      <li class="contact-item">
-        <div class="icon-box">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </div>
-        <div class="contact-info">
-          <p class="contact-title">LinkedIn</p>
-          <a href="https://www.linkedin.com/in/harshitha-sreiya-palaparthi-4434b4340" target="_blank" class="contact-link"></a>
-        </div>
-      </li>
-    </ul>
-
-    <div class="separator"></div>
-
-    <!-- Social links -->
-    <ul class="social-list">
-      <li class="social-item">
-        <a href="https://www.linkedin.com/in/harshitha-sreiya-palaparthi-4434b4340" class="social-link" target="_blank">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a>
-      </li>
-    </ul>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
   </div>
-
-</aside>
+</header>
 
 
   <header>
@@ -485,29 +702,40 @@
   </header>
 
 
-  <section id="about" class="about-section">
+
+
+<section id="about" class="about-section">
   <h2 class="section-title">About Me</h2>
-  <div class="about-content">
-    <p>
-      I am a detail-oriented and driven master's student in <strong>Business Analytics</strong> at the <strong>University of North Texas</strong>, with a strong foundation in data analysis, problem-solving, and business intelligence.
-    </p>
-    <p>
-      My academic and project experience spans <strong>AI-driven solutions</strong>, <strong>data visualization</strong>, and <strong>statistical modeling</strong>, where I focus on transforming complex datasets into actionable insights that fuel strategic decision-making.
-    </p>
-    <p>
-      My hands-on work includes real-world projects in:
+  <div class="about-container">
+
+    <!-- Left Side: Text -->
+    <div class="about-content animate-slide-in">
+      <p>
+        I am a detail-oriented and driven master's student in <strong>Business Analytics</strong> at the <strong>University of North Texas</strong>, with a strong foundation in data analysis, problem-solving, and business intelligence.
+      </p>
+      <p>
+        My academic and project experience spans <strong>AI-driven solutions</strong>, <strong>data visualization</strong>, and <strong>statistical modeling</strong>, where I focus on transforming complex datasets into actionable insights that fuel strategic decision-making.
+      </p>
+      <p>My hands-on work includes real-world projects in:</p>
       <ul class="about-projects">
         <li>📊 Malnutrition analytics</li>
         <li>🤖 AI-powered hiring systems</li>
         <li>💳 Fraud detection in banking</li>
       </ul>
-    </p>
-    <p>
-      I am proficient in technologies such as <strong>Python</strong>, <strong>Tableau</strong>, <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Google Cloud Platform</strong>. Passionate about leveraging data to drive business growth, innovation, and ethical outcomes.
-    </p>
+      <p>
+        I am proficient in technologies such as <strong>Python</strong>, <strong>Tableau</strong>, <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Google Cloud Platform</strong>. Passionate about leveraging data to drive business growth, innovation, and ethical outcomes.
+      </p>
+    </div>
+
+    <!-- Right Side: Animated Image -->
+    <div class="about-image animate-float">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT55RO-Ou5efTiuy0a7eQ_UMH8-pUrnMa0jlUJtk2N8UBP23QgzRDa9mrdJM2od37flXk4&usqp=CAU" alt="Animated Girl" />
+    </div>
+
   </div>
 </section>
 
+  
 
 <section id="summary" class="timeline-summary">
   <h2 class="section-title">My Journey</h2>
@@ -672,6 +900,7 @@
       </ul>
     </article>
   </section>
+  
    <section id="projects" class="projects-section page-section">
         <h2>Projects</h2>
 
@@ -796,7 +1025,13 @@
 
   // Listen for scroll to trigger the animation
   window.addEventListener('scroll', animateSkillBars);
-</script>
 
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('navbar');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+    
+</script>
 </body>
 </html>
