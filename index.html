@@ -361,6 +361,26 @@ footer.footer-copyright {
 .animate-fade-in-up {
   animation: fadeInUp 1s ease forwards;
 }
+#career .scrolling-skills {
+  display: flex;
+  gap: 4rem; /* space between skill groups */
+  animation: scroll-left 30s linear infinite;
+  white-space: nowrap;
+  padding: 1rem 0;
+}
+
+#career .scrolling-skills:hover {
+  animation-play-state: paused; /* pause on hover */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
 
   </style>
@@ -486,6 +506,132 @@ footer.footer-copyright {
 </section>
 
 
+<section id="career" class="py-16 px-6 md:px-20 bg-gray-50 text-gray-800 animate-fade-in-up">
+  <h2 class="text-4xl font-bold text-center text-violet-600 mb-12">Career Summary</h2>
+  <p class="text-center max-w-3xl mx-auto text-gray-700 text-lg mb-8">
+    Master’s student in Business Analytics with strong skills in data modeling, data visualization, and business intelligence tools. Experienced in AI-driven applications, front-end reporting, and KPI tracking. Available from December 2025 for full-time roles across the U.S.
+  </p>
+
+  <div class="max-w-5xl mx-auto overflow-x-auto whitespace-nowrap py-4 border-t border-b border-gray-300">
+    
+    <!-- Programming Languages -->
+    <div class="inline-block align-top mr-10">
+      <h3 class="font-semibold text-violet-600 mb-2">Programming Languages</h3>
+      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+        <li>Python</li>
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>SQL</li>
+        <li>HTML</li>
+        <li>CSS</li>
+      </ul>
+    </div>
+
+    <!-- Tools -->
+    <div class="inline-block align-top mr-10">
+      <h3 class="font-semibold text-violet-600 mb-2">Tools</h3>
+      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+        <li>Git</li>
+        <li>GitHub</li>
+        <li>MS Excel</li>
+        <li>Jupyter Notebook</li>
+      </ul>
+    </div>
+
+    <!-- Technologies -->
+    <div class="inline-block align-top mr-10">
+      <h3 class="font-semibold text-violet-600 mb-2">Technologies</h3>
+      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+        <li>MySQL</li>
+        <li>MongoDB</li>
+        <li>Numpy</li>
+        <li>Pandas</li>
+        <li>Microsoft Azure</li>
+        <li>Tableau</li>
+        <li>Power BI</li>
+        <li>Big Data</li>
+      </ul>
+    </div>
+
+    <!-- Others -->
+    <div class="inline-block align-top">
+      <h3 class="font-semibold text-violet-600 mb-2">Others</h3>
+      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+        <li>Google Cloud Platform (GCP)</li>
+        <li>DBMS</li>
+        <li>Machine Learning</li>
+        <li>Agile</li>
+        <li>Scrum</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+  <section id="career" class="py-16 px-6 md:px-20 bg-gray-50 text-gray-800 animate-fade-in-up">
+  <h2 class="text-4xl font-bold text-center text-violet-600 mb-12">Career Summary</h2>
+  <p class="text-center max-w-3xl mx-auto text-gray-700 text-lg mb-8">
+    Master’s student in Business Analytics with strong skills in data modeling, data visualization, and business intelligence tools. Experienced in AI-driven applications, front-end reporting, and KPI tracking. Available from December 2025 for full-time roles across the U.S.
+  </p>
+
+  <div class="scrolling-skills max-w-5xl mx-auto border-t border-b border-gray-300 py-4 whitespace-nowrap">
+    
+    <!-- Programming Languages -->
+    <div class="inline-block align-top mr-10">
+      <h3 class="font-semibold text-violet-600 mb-2">Programming Languages</h3>
+      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+        <li>Python</li>
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>SQL</li>
+        <li>HTML</li>
+        <li>CSS</li>
+      </ul>
+    </div>
+
+    <!-- Tools -->
+    <div class="inline-block align-top mr-10">
+      <h3 class="font-semibold text-violet-600 mb-2">Tools</h3>
+      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+        <li>Git</li>
+        <li>GitHub</li>
+        <li>MS Excel</li>
+        <li>Jupyter Notebook</li>
+      </ul>
+    </div>
+
+    <!-- Technologies -->
+    <div class="inline-block align-top mr-10">
+      <h3 class="font-semibold text-violet-600 mb-2">Technologies</h3>
+      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+        <li>MySQL</li>
+        <li>MongoDB</li>
+        <li>Numpy</li>
+        <li>Pandas</li>
+        <li>Microsoft Azure</li>
+        <li>Tableau</li>
+        <li>Power BI</li>
+        <li>Big Data</li>
+      </ul>
+    </div>
+
+    <!-- Others -->
+    <div class="inline-block align-top">
+      <h3 class="font-semibold text-violet-600 mb-2">Others</h3>
+      <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+        <li>Google Cloud Platform (GCP)</li>
+        <li>DBMS</li>
+        <li>Machine Learning</li>
+        <li>Agile</li>
+        <li>Scrum</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
 
 
@@ -496,7 +642,8 @@ footer.footer-copyright {
 
     <!-- UNT Infographic -->
     <div class="flex flex-col items-center bg-violet-50 rounded-lg p-8 shadow-lg w-full md:w-1/2">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAq1BMVEX///8AejMAfje518UAdSgAeDAAdisAcyP5/fsAezLC3MyizbMAeS4AdSfK5NVcpXkgg0TQ5tny+fXm8eqHvJsRh0XZ6uArjVF9tpMAcyAAgDrl8eqWxqkAcBm92sje7+VPm2uqzrdmqoBCk15xsIkhiUo+lV92r4tRonGMwqJLm2mcx62pzbdZqnxqq4MojFAwmF4AawQ8kFlAm2aAvZpdnHASiklyto9WqXpP6vfjAAAJTklEQVR4nO2ZaXejOBZAZVbJiE3si9kMDtg1doqkq/r//7J5AjtLL0md9OTUdJ13PwQskNBF0pNECEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQ5H+AcG5n9GdW4xPx/3M7U/2fWY/P47xLxXIijgfxk+vyKRSKzu4Wszq3+19RcZvputFJM5py3v/s6nwC1OX6RnMLOPXPdlY+X9iqkmurivWXGgv513nOH6/panG94Yl4LaVSIYD5ag03Qq4A/kCSkAmELCcSujxsKysRVK1aLDfSpxIho1CrD/cv6xEU+VEQ0ZVnLW9v6f7AFEXJrzJOpEiYeuJwGNSn7Ge+XMjbC1Nesd4iIh4QemdbJLSTmGyVRohv3E/tEAYIz+uOM86VItgzxtnskMJlNp8rovJG3NtQJOf3+VwTi7sfNayUtr0YG/sQ10wpzya/VT7U9M1G31wNQ1v+Mub6YMCJ8XRXfNHlBW0sbV0C58vBmK/hK7KlYQaGpnZHtgwMI7OubIhq7c4Vrt1ZliWCPQ/blDc03Y1qOMak1RphlT33Sss5myd62Dl/qvoPcjaVsprtjXFwenMoG/OyzhkisdmzIb23NwBLHc4heWMM2zV7m2nwk2fWg6GvlzZMHs2UvDQ0ZRte8thZDO1YRHlN0syiLlwBoA0dElxmMWYQE+DltEYDf7dcvijVdh37/qOCsnEMt3KZbiRVarPStZNFkRZBbzy3YVBHug7dDJJHQypGq2IQl2xjT0Flak0dtLmue1UQhDbz/2SYfR/cq6FP3F0r9l5MXSO6fDtJwzae+JmquZ2PW/pkmMiucMwfWPVhQ5HmhnZopWiiptowHbPbtJjaz4aESMNAnrjScGNc25qo0GCyhWCoka00hPQyG+mfDHePE5u8q2GbdX7+m3g2NBizZ8iqHnmmnF4bVkz78CgELGs2DK8sPd0Y2sn2poPZBauh9sKQ/sEQurX/wrCIY/psKOLg9gIHsyb0bLZgmBbJ/c2wGJISArdwYYw
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6nsth-dM_LlSDgCV8kS3817LWGRyJKWTJY9hg93mpuCVL-r3LDD2ybfENmnhRCDM4xA&usqp=CAU" alt="University of North Texas" class="w-24 h-24 mb-6 object-contain" />
+
       <h3 class="text-2xl font-bold text-violet-700 mb-2">University of North Texas</h3>
       <p class="text-sm text-gray-600 mb-4">Texas, United States</p>
       <div class="text-violet-600 font-semibold mb-4">Jan 2024 – Dec 2025</div>
@@ -517,7 +664,7 @@ footer.footer-copyright {
 
 
 <section id="experience" class="py-16 px-6 md:px-20 bg-white text-gray-800">
-  <h2 class="text-4xl font-bold text-center text-violet-600 mb-12">Professional Experience</h2>
+  <h2 class="text-4xl font-bold text-center text-black-600 mb-12">Professional Experience</h2>
 
   <div class="max-w-5xl mx-auto space-y-10">
 
@@ -612,6 +759,11 @@ footer.footer-copyright {
       <ul class="skill-list grid grid-cols-2 gap-4">
         <li class="flex items-center space-x-3">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="w-6 h-6" />
+          <img src="https://www.svgrepo.com/show/7344/sql-file-format-symbol.svg" alt="MySQL" class="w-6 h-6" />
+          <span>MySQL</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://www.svgrepo.com/show/7344/sql-file-format-symbol.svg" alt="MySQL" class="w-6 h-6" />
           <span>MySQL</span>
         </li>
         <li class="flex items-center space-x-3">
@@ -650,7 +802,7 @@ footer.footer-copyright {
       <h3 class="skill-title mb-4">Others</h3>
       <ul class="skill-list grid grid-cols-2 gap-4">
         <li class="flex items-center space-x-3">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Google_Cloud_Logo.svg" alt="GCP" class="w-6 h-6" />
+          <img src="https://cdn.iconscout.com/icon/free/png-256/free-google-cloud-logo-icon-download-in-svg-png-gif-file-formats--weather-storage-data-pack-logos-icons-1721675.png?f=webp&w=256" alt="GCP" class="w-6 h-6" />
           <span>Google Cloud Platform (GCP)</span>
         </li>
         <li class="flex items-center space-x-3">
@@ -686,7 +838,7 @@ footer.footer-copyright {
       <div class="project-card flex flex-col overflow-hidden rounded-lg shadow-md bg-white">
         <img src="https://miro.medium.com/v2/resize:fit:1200/1*bTctD2Ub51R_k594veWS7A.jpeg" alt="Hiring Assistant AI" class="w-full h-48 object-cover">
         <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-2xl font-bold text-gray-800 mb-3">Hiring Assistant AI – Agentic Resume Screening System</h3>
+          <h3 class="text-2xl font-bold text-voilet-800 mb-3">Hiring Assistant AI – Agentic Resume Screening System</h3>
           <p class="text-gray-600 text-sm mb-6 flex-grow">
             Built a privacy-first, fully offline AI assistant using RAG, SentenceTransformers, and Streamlit. Parses resumes, semantically ranks them, and evolves dynamically with recruiter feedback.
           </p>
@@ -721,7 +873,7 @@ footer.footer-copyright {
       <div class="project-card flex flex-col overflow-hidden rounded-lg shadow-md bg-white">
         <img src="https://www.researchgate.net/publication/346138561/figure/fig2/AS:961278126325771@1606197973848/Global-status-of-malnutrition-in-different-regions-Source-UNICEF-2018.ppm" alt="Global Malnutrition" class="w-full h-48 object-cover">
         <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-2xl font-bold text-gray-800 mb-3">Visualizing Global Trends in Child Malnutrition</h3>
+          <h3 class="text-2xl font-bold text-violet-800 mb-3">Visualizing Global Trends in Child Malnutrition</h3>
           <p class="text-gray-600 text-sm mb-6 flex-grow">
             Created interactive dashboards using Tableau and Python to visualize child malnutrition data (1970–2022) across countries, genders, and age groups.
           </p>
@@ -788,7 +940,7 @@ footer.footer-copyright {
 </footer>
 
   <footer class="bg-gray-800 text-center py-4">
-    <p class="text-white text-sm">&copy; @ 2025 Harshitha. All rights reserved.</p>
+    <p class="text-white text-sm">&copy; 2025 Harshitha. All rights reserved.</p>
   </footer>
 
     <script>
