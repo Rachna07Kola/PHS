@@ -331,6 +331,120 @@ footer {
   }
 }
 
+/* General section styling */
+#experience {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Section heading */
+#experience h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  border-bottom: 3px solid #2980b9;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+/* Each job article */
+#experience article {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Job title */
+#experience h3 {
+  font-size: 1.3rem;
+  color: #34495e;
+  margin-bottom: 4px;
+}
+
+/* Job organization & dates */
+#experience em {
+  display: block;
+  font-style: italic;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+/* Job description list */
+#experience ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Individual list items */
+#experience ul li {
+  margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #experience {
+    padding: 15px;
+    margin: 20px 10px;
+  }
+  
+  #experience h2 {
+    font-size: 1.6rem;
+  }
+  
+  #experience h3 {
+    font-size: 1.1rem;
+  }
+}
+/* styles.css */
+
+.content {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  animation: backgroundAnimation 10s ease-in-out infinite alternate;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-block {
+  max-width: 700px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* Simple animated gradient background */
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.content {
+  background-size: 200% 200%;
+}
 
   </style>
   
@@ -343,13 +457,14 @@ footer {
     <div class="logo">Harshitha</div>
     <nav class="nav" id="navbar">
       <ul class="nav-list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#summary">Summary</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#leadership">Leadership</a></li>
+            <a href="#home" data-target="home">Home</a>
+            <a href="#about">About</a>
+            <a href="#summary">Summary</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#leadership">Leadership</a>
       </ul>
     </nav>
     <div class="menu-toggle" id="menu-toggle">&#9776;</div>
@@ -369,7 +484,21 @@ footer {
   </header>
 
 
-
+  <section id="home" class="content page-section">
+    <div class="text-block">
+      <h1>Hello & Welcome to My Digital Space</h1>
+      <p>
+        Step into a world where ideas come to life. Discover the skills I've honed, the experiences that shaped me,
+        and the projects that showcase my passion for technology and innovation – all set against a dynamic, animated
+        backdrop that reflects the energy I bring to every challenge.
+      </p>
+    </div>
+    
+    <div class="image-block">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvk8bcw0gboefndUXPbfjG9hE22iS9_mLkrw&s" alt="Digital Space Illustration" />
+  </div>
+    
+  </section>
 
 <section id="about" class="about-section">
   <h2 class="section-title">About Me</h2>
@@ -544,29 +673,33 @@ footer {
 </section>
 
 
-  <section id="experience">
-    <h2>Professional Experience</h2>
+<section id="experience">
+  <h2>Professional Experience</h2>
 
-    <article>
-      <h3>Entrepreneurship / Business Development Intern</h3>
-      <p><em>NSIC – Hyderabad, India (May 2022 – March 2023)</em></p>
-      <ul>
-        <li>Analyzed market trends, financial feasibility, and industrial awareness impacting small business growth.</li>
-        <li>Evaluated business growth patterns and developed insights to help small businesses make informed decisions.</li>
-        <li>Collected and analyzed sales, customer demand, and industry growth data; created financial models to assess viability.</li>
-      </ul>
-    </article>
+  <article>
+    <h3>Entrepreneurship / Business Development Intern</h3>
+    <p><em>NSIC – Hyderabad, India (May 2022 – March 2023)</em></p>
+    <ul>
+      <li>Worked on understanding how market trends, financial feasibility, and industrial awareness impact small business growth.</li>
+      <li>Analyzed market data, evaluated business growth patterns, and developed insights to help small businesses make informed decisions.</li>
+      <li>Collected and analyzed data from small businesses, identified trends in sales, customer demand, and industry growth.</li>
+      <li>Created a basic financial model to assess business viability and provide strategic recommendations.</li>
+    </ul>
+  </article>
 
-    <article>
-      <h3>Counselor / Data Insights Mentor</h3>
-      <p><em>Voice 4 Girls – India (Aug 2021 – March 2022)</em></p>
-      <ul>
-        <li>Mentored students, analyzed learning patterns, and provided insights on teaching strategies for improved engagement.</li>
-        <li>Conducted counseling sessions, assessed progress, and adapted mentoring using qualitative and quantitative analysis.</li>
-        <li>Enhanced students’ confidence, problem-solving, and decision-making skills through data-driven approaches.</li>
-      </ul>
-    </article>
-  </section>
+  <article>
+    <h3>Counselor / Data Insights Mentor</h3>
+    <p><em>Voice 4 Girls – India (August 2021 – March 2022)</em></p>
+    <ul>
+      <li>Empowered students by helping them develop key personal and academic skills through interactive sessions and mentoring.</li>
+      <li>Analyzed learning patterns and provided insights on effective teaching strategies to enhance engagement and retention.</li>
+      <li>Conducted counseling sessions, assessed student progress using qualitative insights, and adapted mentoring techniques accordingly.</li>
+      <li>Utilized surveys and feedback tracking to identify learning gaps and improve counseling effectiveness.</li>
+      <li>Improved students’ confidence, problem-solving, and decision-making skills using data-driven approaches.</li>
+    </ul>
+  </article>
+</section>
+
   
    <section id="projects" class="projects-section page-section">
         <h2>Projects</h2>
