@@ -9,17 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-    }
-    .corner-shape {
-      width: 0;
-      height: 0;
-      border-style: solid;
-    }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Corner Shape (unused, but kept) */
+.corner-shape {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Glow Pulse Animation */
 @keyframes glowPulse {
   0%, 100% {
     text-shadow: 0 0 10px #9f7aea, 0 0 20px #9f7aea;
@@ -32,14 +37,81 @@
   animation: glowPulse 3s infinite ease-in-out;
 }
 
-/* Apply these styles if NOT using Tailwind CSS */
+/* Slow Zoom Background Animation */
+@keyframes slowZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+section.relative {
+  animation: slowZoom 30s ease-in-out infinite;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Float Up Down Animation */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0) rotate(-90deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-90deg);
+  }
+}
+.animate-float {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+/* Delays for Staggered Animations */
+.delay-150 {
+  animation-delay: 0.15s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease forwards;
+}
+.animate-fade-in.delay-150 {
+  animation-delay: 0.15s;
+}
+
+/* Badge Styling */
+.badge {
+  background-color: #ede9fe; /* Light Violet */
+  color: #6d28d9;            /* Violet text */
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Section: Skills */
 #skills {
   background-color: #f9fafb;
   padding: 4rem 1.5rem;
   color: #1f2937;
   font-family: 'Segoe UI', sans-serif;
 }
-
 .skill-card {
   background-color: #fff;
   padding: 1.5rem;
@@ -47,19 +119,16 @@
   box-shadow: 0 4px 8px rgba(100, 100, 111, 0.1);
   transition: all 0.3s ease;
 }
-
 .skill-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(100, 100, 111, 0.15);
 }
-
 .skill-title {
   font-size: 1.25rem;
   font-weight: 600;
   color: #7c3aed;
   margin-bottom: 1rem;
 }
-
 .skill-list {
   list-style: none;
   padding: 0;
@@ -67,21 +136,18 @@
   columns: 2;
   column-gap: 1.5rem;
 }
-
 .skill-list li {
   margin-bottom: 0.5rem;
   font-size: 1rem;
 }
 
-/* Base section styling */
+/* Section: Education */
 #education {
   background-color: #ffffff;
   padding: 4rem 1.5rem;
   color: #1f2937;
   font-family: 'Segoe UI', sans-serif;
 }
-
-/* Section heading */
 #education h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -89,21 +155,16 @@
   text-align: center;
   margin-bottom: 2.5rem;
 }
-
 @media (min-width: 768px) {
   #education h2 {
     font-size: 2.5rem;
   }
 }
-
-/* Education card container */
 #education .space-y-10 {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
-
-/* Each card */
 #education .bg-gray-50 {
   background-color: #f9fafb;
   padding: 1.5rem;
@@ -111,39 +172,30 @@
   box-shadow: 0 4px 8px rgba(100, 100, 111, 0.08);
   transition: all 0.3s ease;
 }
-
 #education .bg-gray-50:hover {
   box-shadow: 0 8px 20px rgba(100, 100, 111, 0.15);
 }
-
-/* University title */
 #education h3 {
   font-size: 1.25rem;
   font-weight: 600;
   color: #6d28d9; /* violet-700 */
   margin-bottom: 0.5rem;
 }
-
-/* Date/location line */
 #education p.text-sm {
   font-size: 0.875rem;
   color: #6b7280; /* gray-500 */
   margin-bottom: 0.5rem;
 }
-
-/* Degree description */
 #education p.text-gray-700 {
   color: #374151; /* gray-700 */
   font-size: 1rem;
 }
 
-/* Project Section Styling */
+/* Section: Projects */
 #projects {
   background-color: #f9fafb;
   padding: 5rem 2rem;
 }
-
-/* Section Heading */
 #projects h2 {
   font-size: 2.5rem;
   font-weight: 800;
@@ -151,27 +203,21 @@
   text-align: center;
   margin-bottom: 3rem;
 }
-
-/* Grid Container */
 #projects .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
 }
-
 @media (min-width: 768px) {
   #projects .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (min-width: 1024px) {
   #projects .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-/* Card Styling */
 .project-card {
   background-color: white;
   border-radius: 0.5rem;
@@ -181,41 +227,33 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
-
 .project-card img {
   width: 100%;
   height: 12rem;
   object-fit: cover;
 }
-
-/* Card Content */
 .project-card .p-6 {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
-
 .project-card h3 {
   font-size: 1.5rem;
   font-weight: 700;
   color: #1f2937; /* Gray-800 */
   margin-bottom: 0.75rem;
 }
-
 .project-card p {
   font-size: 0.875rem;
   color: #4b5563; /* Gray-600 */
   flex-grow: 1;
   margin-bottom: 1.5rem;
 }
-
-/* Buttons */
 .view-button, .code-button {
   background-color: #7c3aed;
   color: white;
@@ -228,32 +266,26 @@
   transition: background-color 0.2s ease;
   text-decoration: none;
 }
-
 .code-button {
   background-color: #4f46e5; /* Indigo-600 */
 }
-
 .view-button:hover {
   background-color: #6d28d9; /* Violet-700 */
 }
-
 .code-button:hover {
   background-color: #4338ca; /* Indigo-700 */
 }
-
-/* Hidden Details (Initially Hidden) */
 .project-details {
   display: none;
   margin-top: 1.5rem;
   font-size: 0.875rem;
   color: #374151; /* Gray-700 */
 }
-
 .project-card.expanded .project-details {
   display: block;
 }
 
-        /* Footer Styling */
+/* Footer Styling */
 footer.footer {
   background-color: #1f2937; /* Tailwind's gray-800 */
   color: #f9fafb; /* Tailwind's gray-100 */
@@ -263,19 +295,16 @@ footer.footer {
   padding: 3rem 2rem;
   text-align: left;
 }
-
 footer.footer h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
   color: #e5e7eb; /* Tailwind's gray-200 */
 }
-
 footer.footer p {
   font-size: 0.95rem;
   line-height: 1.6;
   color: #d1d5db; /* Tailwind's gray-300 */
 }
-
 .footer-note {
   margin-top: 1rem;
   font-style: italic;
@@ -291,23 +320,21 @@ footer.footer p {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 .social-icon:hover {
   color: #a78bfa; /* violet-400 */
 }
 
-/* Live Date and Time specifically overridden to black */
+/* Live Date and Time Override */
 #live-date-time {
   color: black !important;
 }
 
-/* Responsive */
+/* Responsive Footer */
 @media (max-width: 768px) {
   footer.footer {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .social-icon {
     margin-bottom: 0.5rem;
   }
@@ -317,52 +344,6 @@ footer.footer p {
 footer.footer-copyright {
   background-color: #1f2937; /* Tailwind gray-800 */
   color: white;
-}
-
-    @keyframes slowZoom {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-    section.relative {
-      animation: slowZoom 30s ease-in-out infinite;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-
-    @keyframes floatUpDown {
-    0%, 100% {
-      transform: translateY(0) rotate(-90deg);
-    }
-    50% {
-      transform: translateY(-8px) rotate(-90deg);
-    }
-  }
-  .animate-float {
-    animation: floatUpDown 3s ease-in-out infinite;
-  }
-  /* Delays for staggered animation */
-  .delay-150 {
-    animation-delay: 0.15s;
-  }
-  .delay-300 {
-    animation-delay: 0.3s;
-  }
-
-  .badge {
-  background-color: #ede9fe; /* Light Violet */
-  color: #6d28d9;            /* Violet text */
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  display: inline-block;
 }
 @keyframes fadeInUp {
   0% {
@@ -375,13 +356,10 @@ footer.footer-copyright {
   }
 }
 
-.animate-fade-in {
-  animation: fadeInUp 0.8s ease forwards;
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease forwards;
 }
 
-.animate-fade-in.delay-150 {
-  animation-delay: 0.15s;
-}
 
   </style>
 </head>
@@ -411,18 +389,10 @@ footer.footer-copyright {
     </ul>
   </nav>
 
-  <!-- Main Section -->
-  <section class="min-h-screen flex flex-col md:flex-row items-center justify-center py-20 px-8 space-y-10 md:space-y-0 md:space-x-12">
-    <div class="text-center md:text-left max-w-xl">
-      <h1 class="text-4xl font-bold text-orange-500 mb-4">Hi, I'm Harshitha</h1>
-      <p class="text-white text-lg mb-6">Behind every dataset lies a story, and within every line of code, a spark of creativity. This portfolio is an invitation to witness the fusion of business and programming, where passion drives progress, and every challenge is an opportunity to innovate. Welcome to the future I’m building, one idea at a time. </p> 
-    </div>
-    <img src="/images/profile.jpg" alt="Professional photo of Nairobi Gadot" class="w-60 h-60 rounded-full object-cover shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-  </section>
 
   <!-- Main Section -->
 <section 
-  id="main-section"
+  id="home"
   class="relative min-h-screen flex flex-col md:flex-row items-center justify-center py-20 px-8 space-y-10 md:space-y-0 md:space-x-12 overflow-hidden"
   style="background-image: url('https://wallpapers.com/blog/wp-content/uploads/2023/06/Web-development-concept-with-person-using-a-laptop-computer.jpeg'); background-size: cover; background-position: center;"
 >
@@ -445,22 +415,22 @@ footer.footer-copyright {
 </section>
 
   <!-- Follow Me -->
-<!-- Social Links with Icons and Contact Info -->
-<div class="flex flex-col items-center space-y-4 fixed left-0 top-1/2 transform -translate-y-1/2">
-  <a href="https://www.linkedin.com/in/harshithasreiya" title="LinkedIn" target="_blank" class="transform -rotate-90 hover:text-orange-500">
+<!-- Social Links Sidebar -->
+<div class="fixed left-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-6 z-50">
+  <a href="https://www.linkedin.com/in/harshithasreiya" title="LinkedIn" target="_blank" class="social-icon">
     <i class="fab fa-linkedin"></i>
   </a>
-  <a href="https://github.com/harshi1744" title="GitHub" target="_blank" class="transform -rotate-90 hover:text-orange-500">
+  <a href="https://github.com/harshi1744" title="GitHub" target="_blank" class="social-icon">
     <i class="fab fa-github"></i>
   </a>
-  <a href="mailto:harshithasrieya@gmail.com" title="Email" class="transform -rotate-90 hover:text-orange-500">
+  <a href="mailto:harshithasrieya@gmail.com" title="Email" class="social-icon">
     <i class="fas fa-envelope"></i>
   </a>
 </div>
-</section>
+
 
   <!-- Sections -->
- <section id="home" class="relative hero-section flex flex-col md:flex-row items-center justify-center p-8 overflow-hidden min-h-screen">
+ <section id="about" class="relative hero-section flex flex-col md:flex-row items-center justify-center p-8 overflow-hidden min-h-screen">
 
   <!-- Background GIF -->
   <img 
@@ -474,10 +444,12 @@ footer.footer-copyright {
 
   <!-- Main content -->
   <div class="relative z-10 text-center md:text-left md:w-1/2 p-4 md:pr-12 mt-8 md:mt-0 order-2 md:order-1">
+      <h2 class="text-3xl md:text-4xl font-semibold text-black-300 mb-4">About Me</h2>
+
     <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 text-violet-400 animate-glow-pulse">
       Hi 👋 I'm Harshitha!
     </h1>
-    <p class="text-lg text-violet-200 mb-10 max-w-xl mx-auto md:mx-0">
+    <p class="text-lg text-black-200 mb-10 max-w-xl mx-auto md:mx-0">
       A passionate Data Scientist and Business Analyst blending innovation with insights to solve real-world problems. Behind every dataset lies a story; within every line of code, a spark of creativity.
     </p>
     <!-- Buttons -->
@@ -502,22 +474,7 @@ footer.footer-copyright {
 
 </section>
 
-<section id="career" class="py-16 px-6 md:px-20 bg-gray-50 text-gray-800">
-<div class="grid md:grid-cols-3 gap-6 mt-10">
-  <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-    <h3 class="font-bold text-violet-600 mb-2">Analytics Expertise</h3>
-    <p>Data modeling, BI tools, visualization, and strategic storytelling.</p>
-  </div>
-  <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-    <h3 class="font-bold text-violet-600 mb-2">Real-World Experience</h3>
-    <p>AI-driven applications, front-end reporting, and business KPIs.</p>
-  </div>
-  <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-    <h3 class="font-bold text-violet-600 mb-2">Ready to Contribute</h3>
-    <p>Actively seeking full-time roles in the U.S. from December 2025.</p>
-  </div>
-</div>
-</section>
+
 
   <section id="career" class="py-16 px-6 md:px-20 bg-gray-50 text-gray-800">
   <h2 class="text-4xl font-bold text-center text-violet-600 mb-12">Career Summary</h2>
@@ -546,9 +503,25 @@ footer.footer-copyright {
   </div>
 </section>
 
+  <section id="career" class="py-16 px-6 md:px-20 bg-gray-50 text-gray-800">
+  <h2 class="text-4xl font-bold text-center text-violet-600 mb-12">Career Summary</h2>
+  <p class="text-center max-w-3xl mx-auto text-gray-700 text-lg mb-8">
+    Master’s student in Business Analytics with strong skills in data modeling, data visualization, and business intelligence tools. Experienced in AI-driven applications, front-end reporting, and KPI tracking. Available from December 2025 for full-time roles across the U.S.
+  </p>
+</section>
+
+  <section id="career" class="py-16 px-6 md:px-20 bg-gray-50 text-gray-800 animate-fade-in-up">
+  <h2 class="text-4xl font-bold text-center text-violet-600 mb-12">Career Summary</h2>
+  <p class="text-center max-w-3xl mx-auto text-gray-700 text-lg mb-8">
+    Master’s student in Business Analytics with strong skills in data modeling, data visualization, and business intelligence tools. Experienced in AI-driven applications, front-end reporting, and KPI tracking. Available from December 2025 for full-time roles across the U.S.
+  </p>
+</section>
+
+
+
 
  <section id="education" class="py-16 px-6 md:px-20 bg-white text-gray-800">
-  <h2 class="text-3xl md:text-4xl font-bold mb-10 text-violet-600 text-center">Education</h2>
+  <h2 class="text-3xl md:text-4xl font-bold mb-10 text-black-600 text-center">Education</h2>
 
   <div class="space-y-10 max-w-4xl mx-auto">
 
@@ -564,6 +537,82 @@ footer.footer-copyright {
       <h3 class="text-xl font-semibold text-violet-700">Osmania University</h3>
       <p class="text-sm text-gray-500 mb-2">Hyderabad, India | Jun 2020 – Apr 2023</p>
       <p class="text-gray-700">Bachelor of Commerce in Computer Science</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="education" class="py-16 px-6 md:px-20 bg-white text-gray-800">
+  <h2 class="text-3xl md:text-4xl font-bold mb-10 text-black-700 text-center">Education</h2>
+
+  <div class="space-y-10 max-w-4xl mx-auto">
+
+    <!-- UNT Card -->
+    <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+      <div class="flex items-center space-x-3">
+        <svg class="w-8 h-8 text-violet-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z"></path>
+        </svg>
+        <h3 class="text-xl font-semibold text-violet-700">University of North Texas</h3>
+      </div>
+      <div class="flex flex-col md:flex-row items-center md:items-start md:space-x-6 text-gray-500 text-sm">
+        <span class="flex items-center space-x-1">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17 3h4v18H3V3h4V1h6v2z"/></svg>
+          <span>Texas, United States</span>
+        </span>
+        <span class="flex items-center space-x-1">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M5 2v2h14V2H5zM3 6h18v14H3V6z"/></svg>
+          <span>Jan 2024 – Dec 2025</span>
+        </span>
+      </div>
+      <div class="mt-4 md:mt-0 bg-violet-100 text-violet-700 px-3 py-1 rounded-full text-sm font-semibold self-start">Master of Science in Business Analytics</div>
+    </div>
+
+    <!-- Osmania University Card -->
+    <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+      <div class="flex items-center space-x-3">
+        <svg class="w-8 h-8 text-violet-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z"></path>
+        </svg>
+        <h3 class="text-xl font-semibold text-violet-700">Osmania University</h3>
+      </div>
+      <div class="flex flex-col md:flex-row items-center md:items-start md:space-x-6 text-gray-500 text-sm">
+        <span class="flex items-center space-x-1">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17 3h4v18H3V3h4V1h6v2z"/></svg>
+          <span>Hyderabad, India</span>
+        </span>
+        <span class="flex items-center space-x-1">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M5 2v2h14V2H5zM3 6h18v14H3V6z"/></svg>
+          <span>Jun 2020 – Apr 2023</span>
+        </span>
+      </div>
+      <div class="mt-4 md:mt-0 bg-violet-100 text-violet-700 px-3 py-1 rounded-full text-sm font-semibold self-start">Bachelor of Commerce in Computer Science</div>
+    </div>
+
+  </div>
+</section>
+
+  <section id="education-infographic" class="py-16 px-6 md:px-20 bg-white text-gray-800">
+  <h2 class="text-3xl md:text-4xl font-bold mb-16 text-black-700 text-center">Education</h2>
+
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-12 md:space-y-0 md:space-x-16">
+
+    <!-- UNT Infographic -->
+    <div class="flex flex-col items-center bg-violet-50 rounded-lg p-8 shadow-lg w-full md:w-1/2">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/University_of_North_Texas_logo.svg/120px-University_of_North_Texas_logo.svg.png" alt="UNT Logo" class="w-24 h-24 mb-6 object-contain" />
+      <h3 class="text-2xl font-bold text-violet-700 mb-2">University of North Texas</h3>
+      <p class="text-sm text-gray-600 mb-4">Texas, United States</p>
+      <div class="text-violet-600 font-semibold mb-4">Jan 2024 – Dec 2025</div>
+      <p class="text-center text-gray-700">Master of Science in Business Analytics</p>
+    </div>
+
+    <!-- Osmania University Infographic -->
+    <div class="flex flex-col items-center bg-violet-50 rounded-lg p-8 shadow-lg w-full md:w-1/2">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Osmania_University_Logo.svg/120px-Osmania_University_Logo.svg.png" alt="Osmania University Logo" class="w-24 h-24 mb-6 object-contain" />
+      <h3 class="text-2xl font-bold text-violet-700 mb-2">Osmania University</h3>
+      <p class="text-sm text-gray-600 mb-4">Hyderabad, India</p>
+      <div class="text-violet-600 font-semibold mb-4">Jun 2020 – Apr 2023</div>
+      <p class="text-center text-gray-700">Bachelor of Commerce in Computer Science</p>
     </div>
 
   </div>
@@ -602,64 +651,6 @@ footer.footer-copyright {
 </section>
 
 
-<section id="skills" class="py-16 px-6 md:px-20 bg-gray-50 text-gray-800">
-  <h2 class="text-3xl md:text-4xl font-bold mb-10 text-violet-600 text-center">Technical Skills</h2>
-
-  <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-
-    <!-- Programming Languages -->
-    <div class="skill-card">
-      <h3 class="skill-title">Programming Languages</h3>
-      <ul class="skill-list">
-        <li>Python</li>
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>SQL</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
-    </div>
-
-    <!-- Tools -->
-    <div class="skill-card">
-      <h3 class="skill-title">Tools</h3>
-      <ul class="skill-list">
-        <li>Git</li>
-        <li>GitHub</li>
-        <li>MS Excel</li>
-        <li>Jupyter Notebook</li>
-      </ul>
-    </div>
-
-    <!-- Technologies -->
-    <div class="skill-card">
-      <h3 class="skill-title">Technologies</h3>
-      <ul class="skill-list">
-        <li>MySQL</li>
-        <li>MongoDB</li>
-        <li>Numpy</li>
-        <li>Pandas</li>
-        <li>Microsoft Azure</li>
-        <li>Tableau</li>
-        <li>Power BI</li>
-        <li>Big Data</li>
-      </ul>
-    </div>
-
-    <!-- Others -->
-    <div class="skill-card">
-      <h3 class="skill-title">Others</h3>
-      <ul class="skill-list">
-        <li>Google Cloud Platform (GCP)</li>
-        <li>DBMS</li>
-        <li>Machine Learning</li>
-        <li>Agile</li>
-        <li>Scrum</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
 
   <section id="skills" class="py-16 px-6 md:px-20 bg-gray-50 text-gray-800">
   <h2 class="text-4xl font-bold mb-12 text-violet-600 text-center">Technical Skills</h2>
@@ -720,10 +711,138 @@ footer.footer-copyright {
   </div>
 </section>
 
+  <section id="skills" class="py-16 px-6 md:px-20 bg-gray-50 text-gray-800">
+  <h2 class="text-3xl md:text-4xl font-bold mb-10 text-violet-600 text-center">Technical Skills</h2>
+
+  <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+
+    <!-- Programming Languages -->
+    <div class="skill-card">
+      <h3 class="skill-title mb-4">Programming Languages</h3>
+      <ul class="skill-list grid grid-cols-2 gap-4">
+        <li class="flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-6 h-6" />
+          <span>Python</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-6 h-6" />
+          <span>Java</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-6 h-6" />
+          <span>JavaScript</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQL" class="w-6 h-6" />
+          <span>SQL</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-6 h-6" />
+          <span>HTML</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-6 h-6" />
+          <span>CSS</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tools -->
+    <div class="skill-card">
+      <h3 class="skill-title mb-4">Tools</h3>
+      <ul class="skill-list grid grid-cols-2 gap-4">
+        <li class="flex items-center space-x-3">
+          <i class="fab fa-git-alt text-violet-600 w-6 h-6"></i>
+          <span>Git</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <i class="fab fa-github text-violet-600 w-6 h-6"></i>
+          <span>GitHub</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_Excel_2013_logo.svg" alt="MS Excel" class="w-6 h-6" />
+          <span>MS Excel</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://jupyter.org/assets/main-logo.svg" alt="Jupyter Notebook" class="w-6 h-6" />
+          <span>Jupyter Notebook</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Technologies -->
+    <div class="skill-card">
+      <h3 class="skill-title mb-4">Technologies</h3>
+      <ul class="skill-list grid grid-cols-2 gap-4">
+        <li class="flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="w-6 h-6" />
+          <span>MySQL</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-6 h-6" />
+          <span>MongoDB</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://numpy.org/images/logo.svg" alt="Numpy" class="w-6 h-6" />
+          <span>Numpy</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://pandas.pydata.org/static/img/pandas_mark.svg" alt="Pandas" class="w-6 h-6" />
+          <span>Pandas</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://azure.microsoft.com/svghandler/azure-icon.svg" alt="Microsoft Azure" class="w-6 h-6" />
+          <span>Microsoft Azure</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://public.tableau.com/static/images/tableau-logo-4/images/tableau-logo.png" alt="Tableau" class="w-6 h-6" />
+          <span>Tableau</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Power_BI_Logo.svg" alt="Power BI" class="w-6 h-6" />
+          <span>Power BI</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Big_data_icon.svg" alt="Big Data" class="w-6 h-6" />
+          <span>Big Data</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Others -->
+    <div class="skill-card">
+      <h3 class="skill-title mb-4">Others</h3>
+      <ul class="skill-list grid grid-cols-2 gap-4">
+        <li class="flex items-center space-x-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Google_Cloud_Logo.svg" alt="GCP" class="w-6 h-6" />
+          <span>Google Cloud Platform (GCP)</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <i class="fas fa-database text-violet-600 w-6 h-6"></i>
+          <span>DBMS</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <i class="fas fa-robot text-violet-600 w-6 h-6"></i>
+          <span>Machine Learning</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <i class="fas fa-tasks text-violet-600 w-6 h-6"></i>
+          <span>Agile</span>
+        </li>
+        <li class="flex items-center space-x-3">
+          <i class="fas fa-users-cog text-violet-600 w-6 h-6"></i>
+          <span>Scrum</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 
 <section id="projects" class="py-20 px-8 bg-gray-50">
   <div class="container mx-auto">
-    <h2 class="text-4xl font-extrabold text-center text-violet-600 mb-12">My Projects</h2>
+    <h2 class="text-4xl font-extrabold text-center text-black-600 mb-12">My Projects</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
