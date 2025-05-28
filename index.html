@@ -289,72 +289,365 @@
   }
 }
 
+.skill-progress-bg {
+  background-color: #e0e0e0;
+  height: 8px;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.skill-progress-fill {
+  background-color: #007bff;
+  height: 100%;
+  width: 0;
+  transition: width 1.5s ease-in-out;
+}
+
+.education-section {
+  padding: 2rem 0;
+}
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  border-left: 3px solid #007bff;
+}
+.timeline-item {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background-color: #007bff;
+  border-radius: 50%;
+}
+.degree, .university {
+  margin: 0;
+}
+.date, .location {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+}
+.details {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.edu-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.edu-card {
+  background-color: #f8f9fa;
+  padding: 1.2rem 1.5rem;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.edu-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+.edu-card p {
+  margin: 0.4rem 0;
+}
+
+.about-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.about-section .section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.about-projects {
+  margin: 0.5rem 0 1rem 1.5rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-projects li {
+  padding: 0.3rem 0;
+  font-size: 1rem;
+}
+
+
   </style>
+  
 </head>
+  
 <body>
-  <nav aria-label="Primary navigation">
-    <a href="#summary">Summary</a>
-    <a href="#education">Education</a>
-    <a href="#technical-skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-  </nav>
+
+  <aside class="sidebar" data-sidebar>
+
+  <div class="sidebar-info">
+    <figure class="avatar-box">
+      <img src="https://thumbs.dreamstime.com/b/d-icon-avatar-cartoon-cute-freelancer-woman-working-online-learning-laptop-transparent-png-background-works-embodying-345422695.jpg" alt="Harshitha" width="80">
+    </figure>
+
+    <div class="info-content">
+      <h1 class="name" title="Harshitha">Harshitha</h1>
+      <p class="title">Business Analyst Graduate | Financial Analyst</p>
+    </div>
+
+    <button class="info_more-btn" data-sidebar-btn>
+      <span>Show Contacts</span>
+      <ion-icon name="chevron-down"></ion-icon>
+    </button>
+  </div>
+
+  <div class="sidebar-info_more">
+    <div class="separator"></div>
+
+    <!-- Navigation links section -->
+    <nav class="nav-links" aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#summary">Career Summary</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+      </ul>
+    </nav>
+
+    <div class="separator"></div>
+
+    <!-- Contact Info -->
+    <ul class="contacts-list">
+      <li class="contact-item">
+        <div class="icon-box">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">Email</p>
+          <a href="mailto:harshithasrieya@gmail.com" class="contact-link"></a>
+        </div>
+      </li>
+
+      <li class="contact-item">
+        <div class="icon-box">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">LinkedIn</p>
+          <a href="https://www.linkedin.com/in/harshitha-sreiya-palaparthi-4434b4340" target="_blank" class="contact-link"></a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="separator"></div>
+
+    <!-- Social links -->
+    <ul class="social-list">
+      <li class="social-item">
+        <a href="https://www.linkedin.com/in/harshitha-sreiya-palaparthi-4434b4340" class="social-link" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+
 
   <header>
-    <h1>Harshitha Sreiya Palaparthi</h1>
+    <h1>Harshitha Sreiya Palaparthi's Portfolio</h1>
     <div class="contact-info">
       <span>📞 +1 636-829-9199</span>
-      <a href="mailto:harshithasrieya@gmail.com" aria-label="Email">📧 harshithasrieya@gmail.com</a>
-      <a href="https://linkedin.com/in/harshithasreiya" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">🔗 LinkedIn</a>
-      <a href="https://github.com/harshi1744" target="_blank" rel="noopener noreferrer" aria-label="GitHub">🐙 GitHub</a>
-      <span>Portfolio</span>
+      <a href="mailto:harshithasrieya@gmail.com" aria-label="Email">📧</a>
+      <a href="https://linkedin.com/in/harshithasreiya" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">🔗</a>
+      <a href="https://github.com/harshi1744" target="_blank" rel="noopener noreferrer" aria-label="GitHub">🐙</a>
+      <span></span>
     </div>
   </header>
 
-  <section id="summary">
-    <h2>Summary</h2>
+
+  <section id="about" class="about-section">
+  <h2 class="section-title">About Me</h2>
+  <div class="about-content">
     <p>
-      Master’s student in Business Analytics with strong skills in data modeling, data visualization, and business intelligence tools.
-      Experienced in AI-driven applications, front-end reporting, and KPI tracking. Available from December 2025 for full-time roles across the U.S.
+      I am a detail-oriented and driven master's student in <strong>Business Analytics</strong> at the <strong>University of North Texas</strong>, with a strong foundation in data analysis, problem-solving, and business intelligence.
     </p>
-  </section>
+    <p>
+      My academic and project experience spans <strong>AI-driven solutions</strong>, <strong>data visualization</strong>, and <strong>statistical modeling</strong>, where I focus on transforming complex datasets into actionable insights that fuel strategic decision-making.
+    </p>
+    <p>
+      My hands-on work includes real-world projects in:
+      <ul class="about-projects">
+        <li>📊 Malnutrition analytics</li>
+        <li>🤖 AI-powered hiring systems</li>
+        <li>💳 Fraud detection in banking</li>
+      </ul>
+    </p>
+    <p>
+      I am proficient in technologies such as <strong>Python</strong>, <strong>Tableau</strong>, <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Google Cloud Platform</strong>. Passionate about leveraging data to drive business growth, innovation, and ethical outcomes.
+    </p>
+  </div>
+</section>
+
+
+<section id="summary" class="timeline-summary">
+  <h2 class="section-title">My Journey</h2>
+  <ul class="timeline">
+    <li>
+      <span class="timeline-icon">🎓</span>
+      <div class="timeline-content">
+        <h4>2024 – 2025: M.S. in Business Analytics</h4>
+        <p>University of North Texas – Focused on BI, Data Mining, Predictive Analytics</p>
+      </div>
+    </li>
+    <li>
+      <span class="timeline-icon">📘</span>
+      <div class="timeline-content">
+        <h4>2020 – 2023: B.Com in Computer Applications</h4>
+        <p>Osmania University – Specialized in databases, MIS, and business strategy</p>
+      </div>
+    </li>
+    <li>
+      <span class="timeline-icon">🧠</span>
+      <div class="timeline-content">
+        <h4>Skills Gained</h4>
+        <p>Python, Tableau, Power BI, SQL, Cloud Tech, AI Solutions</p>
+      </div>
+    </li>
+    <li>
+      <span class="timeline-icon">🚀</span>
+      <div class="timeline-content">
+        <h4>2025: Career Launch</h4>
+        <p>Available for full-time roles in analytics & insights starting Dec 2025</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+  <section id="education" class="education-section">
+  <h2 class="section-title">Education</h2>
+  <ul class="timeline">
+
+    <li class="timeline-item">
+      <h3 class="degree">M.S. Business Analytics</h3>
+      <h4 class="university">University of North Texas</h4>
+      <span class="location">Texas, United States</span>
+      <span class="date">Jan 2024 – Dec 2025</span>
+      <p class="details">Relevant Courses: Data Mining, Visualization, Predictive Analytics</p>
+    </li>
+
+    <li class="timeline-item">
+      <h3 class="degree">B.Com (Computer Applications)</h3>
+      <h4 class="university">Osmania University</h4>
+      <span class="location">Hyderabad, India</span>
+      <span class="date">Jun 2020 – Apr 2023</span>
+      <p class="details">Coursework: DBMS, MIS, Financial Accounting</p>
+    </li>
+
+  </ul>
+</section>
+
+
+<section id="summary" class="summary-card">
+  <h2 class="section-title">Professional Summary</h2>
+  <div class="summary-grid">
+    <div class="summary-card-item">
+      <h3>🎓 Academic Background</h3>
+      <p>M.S. in Business Analytics (2024–2025)<br>University of North Texas</p>
+      <p>B.Com in Computer Applications (2020–2023)<br>Osmania University</p>
+    </div>
+    <div class="summary-card-item">
+      <h3>🧠 Core Skills</h3>
+      <p>Data Modeling, BI Reporting, Data Visualization, Statistical Analysis, AI Tools</p>
+    </div>
+    <div class="summary-card-item">
+      <h3>🛠️ Tech Stack</h3>
+      <p>Python, SQL, Power BI, Tableau, MS Excel, GCP</p>
+    </div>
+    <div class="summary-card-item">
+      <h3>🚀 Career Objective</h3>
+      <p>Seeking full-time roles in Analytics or Financial Intelligence from Dec 2025, U.S.-wide.</p>
+    </div>
+  </div>
+</section>
 
   <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>University of North Texas</strong> — Master of Science, Business Analytics (Jan 2024 - Dec 2025), Texas, United States</li>
-      <li><strong>Osmania University, Hyderabad</strong> — Bachelor of Commerce, Computer Science (Jun 2020 - Apr 2023), Hyderabad, India</li>
-    </ul>
-  </section>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-cards">
 
-  <section id="technical-skills">
-    <h2>Technical Skills</h2>
-    <ul class="skills-list">
-      <li>Python</li>
-      <li>Java</li>
-      <li>JavaScript</li>
-      <li>SQL</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Git & GitHub</li>
-      <li>MS Excel</li>
-      <li>Jupyter Notebook</li>
-      <li>MySQL</li>
-      <li>MongoDB</li>
-      <li>NumPy</li>
-      <li>Pandas</li>
-      <li>Microsoft Azure</li>
-      <li>Tableau</li>
-      <li>Power BI</li>
-      <li>Big Data</li>
-      <li>Google Cloud Platform (GCP)</li>
-      <li>DBMS</li>
-      <li>Machine Learning</li>
-      <li>Agile & Scrum</li>
-      <li>AngularJS</li>
-      <li>Maven</li>
-    </ul>
-  </section>
+    <div class="edu-card">
+      <h3>University of North Texas</h3>
+      <p><strong>Degree:</strong> M.S. Business Analytics</p>
+      <p><strong>Duration:</strong> Jan 2024 – Dec 2025</p>
+      <p><strong>Location:</strong> Texas, USA</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>Osmania University</h3>
+      <p><strong>Degree:</strong> B.Com (Computer Applications)</p>
+      <p><strong>Duration:</strong> Jun 2020 – Apr 2023</p>
+      <p><strong>Location:</strong> Hyderabad, India</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="skill" id="skills">
+  <h3 class="h3 skills-title">My Skills</h3>
+  <ul class="skills-list content-card">
+
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Python</h5>
+        <data value="90">90%</data>
+      </div>
+      <div class="skill-progress-bg">
+        <div class="skill-progress-fill" data-percentage="90"></div>
+      </div>
+    </li>
+
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">NumPy</h5>
+        <data value="88">88%</data>
+      </div>
+      <div class="skill-progress-bg">
+        <div class="skill-progress-fill" data-percentage="88"></div>
+      </div>
+    </li>
+
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Pandas</h5>
+        <data value="89">89%</data>
+      </div>
+      <div class="skill-progress-bg">
+        <div class="skill-progress-fill" data-percentage="89"></div>
+      </div>
+    </li>
+  </ul>
+</section>
+
 
   <section id="experience">
     <h2>Professional Experience</h2>
@@ -482,5 +775,28 @@
   <footer>
     &copy; 2025 Harshitha Sreiya Palaparthi
   </footer>
+  
+  <script>
+  // Function to animate skill bars when they enter viewport
+  function animateSkillBars() {
+    const skillSection = document.querySelector("#skills");
+    const skillBars = document.querySelectorAll(".skill-progress-fill");
+    const sectionTop = skillSection.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (sectionTop < screenHeight - 100) {
+      skillBars.forEach(bar => {
+        const percentage = bar.getAttribute("data-percentage");
+        bar.style.width = percentage + "%";
+      });
+      // Stop listening after animation to prevent repeated triggers
+      window.removeEventListener('scroll', animateSkillBars);
+    }
+  }
+
+  // Listen for scroll to trigger the animation
+  window.addEventListener('scroll', animateSkillBars);
+</script>
+
 </body>
 </html>
