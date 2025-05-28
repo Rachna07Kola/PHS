@@ -1,837 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harshitha Sreiya Palaparthi - Portfolio</title>
-  <style>
-  /* ===== RESET & BASE STYLES ===== */
-body, ul {
-  margin: 0;
-  padding: 0;
-}
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #111;
-  color: #eee;
-  line-height: 1.6;
-  padding: 20px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  scroll-behavior: smooth;
-}
-
-h1, h2, h3 {
-  color: #ff66c4;
-  margin-bottom: 0.5rem;
-}
-
-a {
-  color: #ff66c4;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* ===== NAVIGATION BAR ===== */
-nav {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #222;
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 12px 0;
-  z-index: 1000;
-  border-bottom: 2px solid #ff66c4;
-}
-
-nav a {
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-nav a:hover,
-nav a:focus {
-  background-color: #ff66c4;
-  color: #111;
-  outline: none;
-}
-
-/* Offset page content below fixed nav */
-body > *:not(nav) {
-  padding-top: 70px;
-}
-
-/* ===== GENERAL SECTIONS ===== */
-section, .page-section {
-  margin-bottom: 2rem;
-  min-height: auto;
-  padding: 40px 0;
-}
-
-/* ===== CONTACT INFO ===== */
-.contact-info {
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-}
-.contact-info span,
-.contact-info a {
-  margin-right: 1rem;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* ===== SKILLS SECTION ===== */
-.skills-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 8px;
-  list-style: none;
-  padding-left: 0;
-}
-.skills-list li {
-  background: #222;
-  padding: 8px 12px;
-  border-radius: 6px;
-  text-align: center;
-}
-
-/* ===== PROJECTS SECTION ===== */
-.projects-section {
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: #121212;
-}
-
-.projects-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2.5rem;
-  color: #ffffff;
-}
-
-.project-flex {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
-  align-items: center;
-  gap: 20px;
-  animation: fadeIn 1s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.project-block {
-  flex: 1 1 60%;
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(255, 102, 196, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.project-block:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(255, 102, 196, 0.4);
-}
-.project-block p,
-.project-block ul li {
-  color: #e0e0e0;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.project-block ul {
-  padding-left: 1.2rem;
-  margin-bottom: 1rem;
-}
-.project-block ul li {
-  margin-bottom: 0.5rem;
-}
-
-.gif-container {
-  flex: 1 1 35%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.gif-container img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-.gif-container img:hover {
-  transform: scale(1.05);
-}
-
-.projects-section h3 {
-  margin-top: 0;
-  color: #ff66c4;
-  font-size: 1.5rem;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-  .project-flex {
-    flex-direction: column;
-  }
-
-  .project-block,
-  .gif-container {
-    flex: 1 1 100%;
-  }
-
-  .gif-container img {
-    max-width: 100%;
-  }
-}
-
-/* ===== SKILL BAR ===== */
-.skill-progress-bg {
-  background-color: #e0e0e0;
-  height: 8px;
-  width: 100%;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-top: 5px;
-}
-.skill-progress-fill {
-  background-color: #007bff;
-  height: 100%;
-  width: 0;
-  transition: width 1.5s ease-in-out;
-}
-
-/* ===== EDUCATION SECTION ===== */
-.education-section {
-  padding: 2rem 0;
-}
-.timeline {
-  list-style: none;
-  padding-left: 0;
-  border-left: 3px solid #007bff;
-}
-.timeline-item {
-  margin-bottom: 2rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -9px;
-  top: 5px;
-  width: 16px;
-  height: 16px;
-  background-color: #007bff;
-  border-radius: 50%;
-}
-.degree, .university {
-  margin: 0;
-}
-.date, .location {
-  display: block;
-  font-size: 0.9rem;
-  color: #666;
-}
-.details {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-}
-.edu-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.edu-card {
-  background-color: #f8f9fa;
-  padding: 1.2rem 1.5rem;
-  border-left: 4px solid #007bff;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-.edu-card h3 {
-  margin-top: 0;
-  color: #333;
-}
-.edu-card p {
-  margin: 0.4rem 0;
-}
-
-/* ===== ABOUT SECTION ===== */
-.about-section {
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-}
-.about-section .section-title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-.about-content p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 1rem;
-}
-.about-projects {
-  margin: 0.5rem 0 1rem 1.5rem;
-  list-style: none;
-  padding-left: 0;
-}
-.about-projects li {
-  padding: 0.3rem 0;
-  font-size: 1rem;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid #333;
-  font-size: 0.85rem;
-  color: #666;
-  text-align: center;
-}
-
-/* ===== RESPONSIVE NAVIGATION (MOBILE) ===== */
-@media (max-width: 600px) {
-  body {
-    padding: 15px;
-  }
-
-  nav {
-    gap: 12px;
-    padding: 10px 0;
-  }
-
-  nav a {
-    padding: 5px 8px;
-    font-size: 0.9rem;
-  }
-}
-
-/* General section styling */
-#experience {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Section heading */
-#experience h2 {
-  font-size: 2rem;
-  color: #2c3e50;
-  border-bottom: 3px solid #2980b9;
-  padding-bottom: 8px;
-  margin-bottom: 24px;
-}
-
-/* Each job article */
-#experience article {
-  margin-bottom: 32px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #ddd;
-}
-
-/* Job title */
-#experience h3 {
-  font-size: 1.3rem;
-  color: #34495e;
-  margin-bottom: 4px;
-}
-
-/* Job organization & dates */
-#experience em {
-  display: block;
-  font-style: italic;
-  color: #7f8c8d;
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-}
-
-/* Job description list */
-#experience ul {
-  list-style-type: disc;
-  margin-left: 20px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* Individual list items */
-#experience ul li {
-  margin-bottom: 8px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  #experience {
-    padding: 15px;
-    margin: 20px 10px;
-  }
-  
-  #experience h2 {
-    font-size: 1.6rem;
-  }
-  
-  #experience h3 {
-    font-size: 1.1rem;
-  }
-}
-/* styles.css */
-
-.content {
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  animation: backgroundAnimation 10s ease-in-out infinite alternate;
-  min-height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-block {
-  max-width: 700px;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #e0e0e0;
-}
-
-/* Simple animated gradient background */
-@keyframes backgroundAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-.content {
-  background-size: 200% 200%;
-}
-
-  </style>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - John Alvin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom font for a cleaner look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styling for the main container to ensure full height and dark background */
+        .main-container {
+            min-height: 100vh;
+            background-color: #1a1a1a; /* Dark background similar to the image */
+            color: #f0f0f0; /* Light text color */
+            display: flex;
+            flex-direction: column;
+        }
+        /* Style for the navigation links */
+        .nav-link {
+            @apply text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200;
+        }
+        /* Style for the active navigation link */
+        .nav-link-active {
+            @apply text-orange-500;
+        }
+        /* Style for the contact button */
+        .contact-button {
+            @apply bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-700 transition-colors duration-200 shadow-lg;
+        }
+        /* Style for social media icons */
+        .social-icon {
+            @apply text-white text-3xl p-3 rounded-full hover:bg-gray-700 transition-colors duration-200;
+        }
+        /* Responsive image styling */
+        .profile-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 9999px; /* Make it circular if desired, or use rounded-lg for square */
+        }
+    </style>
 </head>
-  
-<body>
-  
-<header class="top-navbar">
-  <div class="container">
-    <div class="logo">Harshitha</div>
-    <nav class="nav" id="navbar">
-      <ul class="nav-list">
-            <a href="#home" data-target="home">Home</a>
-            <a href="#about">About</a>
-            <a href="#summary">Summary</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#leadership">Leadership</a>
-      </ul>
+<body class="main-container">
+    <nav class="w-full bg-gray-800 p-4 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-white text-2xl font-bold mb-4 md:mb-0">
+                <span class="text-orange-500">Dream</span>Tek
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link nav-link-active">About me</a>
+                <a href="#" class="nav-link">My skills</a>
+                <a href="#" class="nav-link">Work</a>
+                <a href="#" class="nav-link">Contact me</a>
+            </div>
+
+            <div class="hidden md:block text-white text-xl">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
     </nav>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  </div>
-</header>
 
+    <main class="flex-grow container mx-auto px-4 py-8 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+        <div class="flex flex-col items-center lg:items-start text-center lg:text-left max-w-lg">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                Hi I'm <span class="text-orange-500">John Alvin</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-6 text-gray-300">
+                Im veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+            </p>
+            <button class="contact-button mb-8 lg:mb-0">
+                Contact me
+            </button>
 
-  <header>
-    <h1>Harshitha Sreiya Palaparthi's Portfolio</h1>
-    <div class="contact-info">
-      <span>📞 +1 636-829-9199</span>
-      <a href="mailto:harshithasrieya@gmail.com" aria-label="Email">📧</a>
-      <a href="https://linkedin.com/in/harshithasreiya" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">🔗</a>
-      <a href="https://github.com/harshi1744" target="_blank" rel="noopener noreferrer" aria-label="GitHub">🐙</a>
-      <span></span>
-    </div>
-  </header>
-
-
-  <section id="home" class="content page-section">
-    <div class="text-block">
-      <h1>Hello & Welcome to My Digital Space</h1>
-      <p>
-        Step into a world where ideas come to life. Discover the skills I've honed, the experiences that shaped me,
-        and the projects that showcase my passion for technology and innovation – all set against a dynamic, animated
-        backdrop that reflects the energy I bring to every challenge.
-      </p>
-    </div>
-    
-    <div class="image-block">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvk8bcw0gboefndUXPbfjG9hE22iS9_mLkrw&s" alt="Digital Space Illustration" />
-  </div>
-    
-  </section>
-
-<section id="about" class="about-section">
-  <h2 class="section-title">About Me</h2>
-  <div class="about-container">
-
-    <!-- Left Side: Text -->
-    <div class="about-content animate-slide-in">
-      <p>
-        I am a detail-oriented and driven master's student in <strong>Business Analytics</strong> at the <strong>University of North Texas</strong>, with a strong foundation in data analysis, problem-solving, and business intelligence.
-      </p>
-      <p>
-        My academic and project experience spans <strong>AI-driven solutions</strong>, <strong>data visualization</strong>, and <strong>statistical modeling</strong>, where I focus on transforming complex datasets into actionable insights that fuel strategic decision-making.
-      </p>
-      <p>My hands-on work includes real-world projects in:</p>
-      <ul class="about-projects">
-        <li>📊 Malnutrition analytics</li>
-        <li>🤖 AI-powered hiring systems</li>
-        <li>💳 Fraud detection in banking</li>
-      </ul>
-      <p>
-        I am proficient in technologies such as <strong>Python</strong>, <strong>Tableau</strong>, <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Google Cloud Platform</strong>. Passionate about leveraging data to drive business growth, innovation, and ethical outcomes.
-      </p>
-    </div>
-
-    <!-- Right Side: Animated Image -->
-    <div class="about-image animate-float">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT55RO-Ou5efTiuy0a7eQ_UMH8-pUrnMa0jlUJtk2N8UBP23QgzRDa9mrdJM2od37flXk4&usqp=CAU" alt="Animated Girl" />
-    </div>
-
-  </div>
-</section>
-
-  
-
-<section id="summary" class="timeline-summary">
-  <h2 class="section-title">My Journey</h2>
-  <ul class="timeline">
-    <li>
-      <span class="timeline-icon">🎓</span>
-      <div class="timeline-content">
-        <h4>2024 – 2025: M.S. in Business Analytics</h4>
-        <p>University of North Texas – Focused on BI, Data Mining, Predictive Analytics</p>
-      </div>
-    </li>
-    <li>
-      <span class="timeline-icon">📘</span>
-      <div class="timeline-content">
-        <h4>2020 – 2023: B.Com in Computer Applications</h4>
-        <p>Osmania University – Specialized in databases, MIS, and business strategy</p>
-      </div>
-    </li>
-    <li>
-      <span class="timeline-icon">🧠</span>
-      <div class="timeline-content">
-        <h4>Skills Gained</h4>
-        <p>Python, Tableau, Power BI, SQL, Cloud Tech, AI Solutions</p>
-      </div>
-    </li>
-    <li>
-      <span class="timeline-icon">🚀</span>
-      <div class="timeline-content">
-        <h4>2025: Career Launch</h4>
-        <p>Available for full-time roles in analytics & insights starting Dec 2025</p>
-      </div>
-    </li>
-  </ul>
-</section>
-
-  <section id="education" class="education-section">
-  <h2 class="section-title">Education</h2>
-  <ul class="timeline">
-
-    <li class="timeline-item">
-      <h3 class="degree">M.S. Business Analytics</h3>
-      <h4 class="university">University of North Texas</h4>
-      <span class="location">Texas, United States</span>
-      <span class="date">Jan 2024 – Dec 2025</span>
-      <p class="details">Relevant Courses: Data Mining, Visualization, Predictive Analytics</p>
-    </li>
-
-    <li class="timeline-item">
-      <h3 class="degree">B.Com (Computer Applications)</h3>
-      <h4 class="university">Osmania University</h4>
-      <span class="location">Hyderabad, India</span>
-      <span class="date">Jun 2020 – Apr 2023</span>
-      <p class="details">Coursework: DBMS, MIS, Financial Accounting</p>
-    </li>
-
-  </ul>
-</section>
-
-
-<section id="summary" class="summary-card">
-  <h2 class="section-title">Professional Summary</h2>
-  <div class="summary-grid">
-    <div class="summary-card-item">
-      <h3>🎓 Academic Background</h3>
-      <p>M.S. in Business Analytics (2024–2025)<br>University of North Texas</p>
-      <p>B.Com in Computer Applications (2020–2023)<br>Osmania University</p>
-    </div>
-    <div class="summary-card-item">
-      <h3>🧠 Core Skills</h3>
-      <p>Data Modeling, BI Reporting, Data Visualization, Statistical Analysis, AI Tools</p>
-    </div>
-    <div class="summary-card-item">
-      <h3>🛠️ Tech Stack</h3>
-      <p>Python, SQL, Power BI, Tableau, MS Excel, GCP</p>
-    </div>
-    <div class="summary-card-item">
-      <h3>🚀 Career Objective</h3>
-      <p>Seeking full-time roles in Analytics or Financial Intelligence from Dec 2025, U.S.-wide.</p>
-    </div>
-  </div>
-</section>
-
-  <section id="education">
-  <h2 class="section-title">Education</h2>
-  <div class="edu-cards">
-
-    <div class="edu-card">
-      <h3>University of North Texas</h3>
-      <p><strong>Degree:</strong> M.S. Business Analytics</p>
-      <p><strong>Duration:</strong> Jan 2024 – Dec 2025</p>
-      <p><strong>Location:</strong> Texas, USA</p>
-    </div>
-
-    <div class="edu-card">
-      <h3>Osmania University</h3>
-      <p><strong>Degree:</strong> B.Com (Computer Applications)</p>
-      <p><strong>Duration:</strong> Jun 2020 – Apr 2023</p>
-      <p><strong>Location:</strong> Hyderabad, India</p>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="skill" id="skills">
-  <h3 class="h3 skills-title">My Skills</h3>
-  <ul class="skills-list content-card">
-
-    <li class="skills-item">
-      <div class="title-wrapper">
-        <h5 class="h5">Python</h5>
-        <data value="90">90%</data>
-      </div>
-      <div class="skill-progress-bg">
-        <div class="skill-progress-fill" data-percentage="90"></div>
-      </div>
-    </li>
-
-    <li class="skills-item">
-      <div class="title-wrapper">
-        <h5 class="h5">NumPy</h5>
-        <data value="88">88%</data>
-      </div>
-      <div class="skill-progress-bg">
-        <div class="skill-progress-fill" data-percentage="88"></div>
-      </div>
-    </li>
-
-    <li class="skills-item">
-      <div class="title-wrapper">
-        <h5 class="h5">Pandas</h5>
-        <data value="89">89%</data>
-      </div>
-      <div class="skill-progress-bg">
-        <div class="skill-progress-fill" data-percentage="89"></div>
-      </div>
-    </li>
-  </ul>
-</section>
-
-
-<section id="experience">
-  <h2>Professional Experience</h2>
-
-  <article>
-    <h3>Entrepreneurship / Business Development Intern</h3>
-    <p><em>NSIC – Hyderabad, India (May 2022 – March 2023)</em></p>
-    <ul>
-      <li>Worked on understanding how market trends, financial feasibility, and industrial awareness impact small business growth.</li>
-      <li>Analyzed market data, evaluated business growth patterns, and developed insights to help small businesses make informed decisions.</li>
-      <li>Collected and analyzed data from small businesses, identified trends in sales, customer demand, and industry growth.</li>
-      <li>Created a basic financial model to assess business viability and provide strategic recommendations.</li>
-    </ul>
-  </article>
-
-  <article>
-    <h3>Counselor / Data Insights Mentor</h3>
-    <p><em>Voice 4 Girls – India (August 2021 – March 2022)</em></p>
-    <ul>
-      <li>Empowered students by helping them develop key personal and academic skills through interactive sessions and mentoring.</li>
-      <li>Analyzed learning patterns and provided insights on effective teaching strategies to enhance engagement and retention.</li>
-      <li>Conducted counseling sessions, assessed student progress using qualitative insights, and adapted mentoring techniques accordingly.</li>
-      <li>Utilized surveys and feedback tracking to identify learning gaps and improve counseling effectiveness.</li>
-      <li>Improved students’ confidence, problem-solving, and decision-making skills using data-driven approaches.</li>
-    </ul>
-  </article>
-</section>
-
-  
-   <section id="projects" class="projects-section page-section">
-        <h2>Projects</h2>
-
-        <div class="project-flex">
-            <article class="project-block project-hiring">
-                <h3>1. Hiring Assistant AI – Agentic Resume Screening System (Academic Project)</h3>
-                <p>This intelligent hiring assistant was built to transform traditional recruitment by integrating agentic AI with Retrieval-Augmented Generation (RAG). It autonomously screens and ranks resumes, engages recruiters through dynamic chat, and evolves based on continuous feedback—all in a privacy-first, offline-ready architecture.</p>
-                <p><strong>Objective:</strong> To develop a lightweight, privacy-compliant, fully offline RAG-powered AI assistant that reduces hiring friction, enhances fairness, and adapts to evolving recruiter criteria in real-time.</p>
-                <p><strong>Core Features:</strong></p>
-                <ul>
-                    <li>Resume Parsing: PyMuPDF-based extraction from PDFs (resumes & job descriptions)</li>
-                    <li>Semantic Matching: SentenceTransformers embeddings + in-memory similarity for context-rich matching</li>
-                    <li>Hybrid Scoring: Combines semantic similarity with rubric-based skill match using Pandas</li>
-                    <li>Recruiter Interaction: Dynamic conversations powered by quantized Mistral-7B-Instruct model</li>
-                    <li>Feedback Loop: Updates scoring logic and rubric based on recruiter input</li>
-                </ul>
-                <p><strong>Technologies:</strong></p>
-                <ul>
-                    <li>Python 3.x for backend logic and processing</li>
-                    <li>Streamlit: Interface for recruiter interaction</li>
-                    <li>PyMuPDF: For text extraction</li>
-                    <li>SentenceTransformers: all-MiniLM-L6-v2 embeddings</li>
-                    <li>Pandas: Skill rubric matching & hybrid ranking</li>
-                    <li>ctransformers: For local inference using quantized Mistral-7B-Instruct</li>
-                    <li>RAG: Integrated retrieval + reasoning for enhanced explainability</li>
-                    <li>Offline Mode: Fully local, secure, and cloud-free operation</li>
-                </ul>
-                <p><strong>Key Outcomes:</strong></p>
-                <ul>
-                    <li>Efficiency: Reduced time-to-hire by automating resume triage and ranking</li>
-                    <li>Transparency: Provided clear explanations behind matches and rankings</li>
-                    <li>Adaptability: Evolved in real-time based on recruiter input and feedback</li>
-                    <li>Privacy-Focused: Local inference ensured no external dependencies</li>
-                </ul>
-            </article>
-            <div class="gif-container">
-                <img src="https://i.pinimg.com/originals/12/b7/87/12b7877ea50bc630d3c2367553a4e1a3.gif" alt="Work Mood GIF" />
+            <div class="flex flex-col gap-4 mt-8">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
 
-        <div class="project-flex">
-            <article class="project-block project-malnutrition">
-                <h3>2. Visualizing Global Trends in Child Malnutrition (Academic Project)</h3>
-                <p>Leveraging global health datasets from WHO, UNICEF, and the World Bank, this project offered a deep dive into malnutrition trends—analyzing stunting, wasting, underweight, and overweight metrics across geography, gender, and age. By transforming complex raw data into interactive dashboards, the project empowered global stakeholders to make informed decisions targeting child health inequalities.</p>
-                <p><strong>Key Deliverables:</strong></p>
-                <ul>
-                    <li>Malnutrition Severity Dashboard: Filterable by country, region, gender, and year—offering a 360° view of malnutrition prevalence</li>
-                    <li>Child Patterns Dashboard: Trend analysis by age, visualized through scatter plots, time-series, box plots, and stacked area charts</li>
-                    <li>Geospatial Heatmaps: Interactive mapping to highlight regional malnutrition disparities</li>
-                </ul>
-                <p><strong>Data Engineering & Insights:</strong></p>
-                <ul>
-                    <li>Cleaned & standardized massive health datasets, resolving missing and inconsistent values</li>
-                    <li>Mapped historical data (1970–2022) to expose evolving trends across urban-rural lines and genders</li>
-                    <li>Identified critical hotspots like Papua New Guinea and Yemen demanding urgent intervention</li>
-                </ul>
-                <p><strong>Tools & Tech Stack:</strong></p>
-                <ul>
-                    <li>Python (Pandas, NumPy): For data cleaning, transformation, and wrangling</li>
-                    <li>Tableau / Power BI: To build interactive, high-impact dashboards</li>
-                    <li>Excel / Google Sheets: Initial validation and exploration</li>
-                    <li>Visualization Techniques: Geospatial mapping, trend & comparative analysis, interactive filters</li>
-                </ul>
-            </article>
-            <div class="gif-container">
-                <img src="https://cdn.dribbble.com/users/19455/screenshots/5808898/loader.gif" alt="Dashboard Loading GIF" />
-            </div>
+        <div class="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-xl">
+            <img src="https://placehold.co/400x400/333333/FFFFFF?text=Profile+Image" alt="John Alvin Profile" class="profile-image">
         </div>
-
-        <div class="project-flex">
-            <article class="project-block project-fraud">
-                <h3>3. Financial Fraud Detection — Machine Learning Model (Academic Project)</h3>
-                <p>This project addressed the escalating challenge of financial fraud using supervised machine learning. By applying multiple models on a labeled dataset, the system aimed to detect suspicious transactions effectively, prioritizing recall to minimize undetected fraud and integrating fairness metrics to reduce bias.</p>
-                <p><strong>Approach & Methodology:</strong></p>
-                <ul>
-                    <li>Dataset: Publicly available transaction data with fraud labels</li>
-                    <li>Preprocessing: Balanced classes using SMOTE, handled missing values, feature scaling</li>
-                    <li>Models Trained: Logistic Regression, Random Forest, XGBoost, Neural Networks</li>
-                    <li>Evaluation Metrics: Precision, Recall, F1-score, ROC-AUC, with focus on minimizing false negatives</li>
-                    <li>Fairness Checks: Monitored model bias across demographics</li>
-                </ul>
-                <p><strong>Tools & Technologies:</strong></p>
-                <ul>
-                    <li>Python (scikit-learn, imbalanced-learn)</li>
-                    <li>Jupyter Notebook for exploratory data analysis and prototyping</li>
-                    <li>Matplotlib & Seaborn for visualization</li>
-                </ul>
-                <p><strong>Outcomes:</strong></p>
-                <ul>
-                    <li>Achieved high recall (>0.9) with acceptable precision</li>
-                    <li>Reduced false negatives by 15% compared to baseline models</li>
-                    <li>Implemented fairness-aware model evaluation to ensure equitable detection</li>
-                </ul>
-            </article>
-            <div class="gif-container">
-                <img src="https://imgflip.com/gif/9v1jeb" alt="Lightning Animation GIF" />
-            </div>
-        </div>
-    </section> 
-
-  <footer>
-    &copy; 2025 Harshitha Sreiya Palaparthi
-  </footer>
-  
-  <script>
-  // Function to animate skill bars when they enter viewport
-  function animateSkillBars() {
-    const skillSection = document.querySelector("#skills");
-    const skillBars = document.querySelectorAll(".skill-progress-fill");
-    const sectionTop = skillSection.getBoundingClientRect().top;
-    const screenHeight = window.innerHeight;
-
-    if (sectionTop < screenHeight - 100) {
-      skillBars.forEach(bar => {
-        const percentage = bar.getAttribute("data-percentage");
-        bar.style.width = percentage + "%";
-      });
-      // Stop listening after animation to prevent repeated triggers
-      window.removeEventListener('scroll', animateSkillBars);
-    }
-  }
-
-  // Listen for scroll to trigger the animation
-  window.addEventListener('scroll', animateSkillBars);
-
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('navbar');
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-    
-</script>
+    </main>
 </body>
 </html>
