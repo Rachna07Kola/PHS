@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshitha's Portfolio</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+ <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+
+<style>
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background: linear-gradient(to bottom right, #7c3aed, #c084fc); /* Violet gradient */
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Animations */
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px #9f7aea, 0 0 20px #9f7aea;
+  }
+  50% {
+    text-shadow: 0 0 20px #d6bcfa, 0 0 40px #d6bcfa;
+  }
+}
+.animate-glow-pulse {
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* CSS */
+.fixed-sidebar {
+  position: fixed;
+  top: 40%;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.social-icon {
+  position: relative;
+  color: #fff;
+  background: #333;
+  padding: 12px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+  background: #0077b5; /* Default LinkedIn blue — can vary per icon */
+  transform: scale(1.1);
+}
+
+.social-icon .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease, left 0.3s ease;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.social-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  left: 50px;
+}
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #7c3aed; /* Violet-600 */
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link-active::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #7c3aed;
+    }
+
+  /* Base setup */
+body {
+  font-family: 'Source Code Pro', monospace;
+  background-color: #0f0f0f;
+  margin: 0;
+  padding: 0;
+}
+
+/* Glowing animated heading */
+.glowing-text {
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff, 0 0 40px #00f7ff;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff, 0 0 40px #00f7ff;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #1e90ff, 0 0 60px #1e90ff;
+  }
+}
+
+/* Typewriter-style quote */
+blockquote {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.1rem;
+  color: #ffffff;
+  border-left: 4px solid #7f5af0;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+blockquote p {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #7f5af0;
+  animation: typing 8s steps(100, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #7f5af0 }
+}
+
+  
+</style>
+</head> 
+  <body>
+<!-- Font Awesome CDN (required for icons) -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<nav class="bg-white shadow-md py-4 sticky top-0 z-50">
+  <ul class="flex justify-center space-x-12 text-gray-700 font-medium text-sm sm:text-base">
+    <li class="group relative flex flex-col items-center">
+      <a href="#home" class="hover:text-violet-600 transition-colors">
+        <i class="fas fa-home text-lg mb-1"></i>
+        Home
+      </a>
+      <span class="absolute bottom-0 w-0 h-0.5 bg-violet-600 transition-all duration-300 group-hover:w-full"></span>
+    </li>
+    <li class="group relative flex flex-col items-center">
+      <a href="#about" class="hover:text-violet-600 transition-colors">
+        <i class="fas fa-user text-lg mb-1"></i>
+        About
+      </a>
+      <span class="absolute bottom-0 w-0 h-0.5 bg-violet-600 transition-all duration-300 group-hover:w-full"></span>
+    </li>
+    <li class="group relative flex flex-col items-center">
+      <a href="#career" class="hover:text-violet-600 transition-colors">
+        <i class="fas fa-briefcase text-lg mb-1"></i>
+        Career
+      </a>
+      <span class="absolute bottom-0 w-0 h-0.5 bg-violet-600 transition-all duration-300 group-hover:w-full"></span>
+    </li>
+    <li class="group relative flex flex-col items-center">
+      <a href="#education" class="hover:text-violet-600 transition-colors">
+        <i class="fas fa-graduation-cap text-lg mb-1"></i>
+        Education
+      </a>
+      <span class="absolute bottom-0 w-0 h-0.5 bg-violet-600 transition-all duration-300 group-hover:w-full"></span>
+    </li>
+    <li class="group relative flex flex-col items-center">
+      <a href="#projects" class="hover:text-violet-600 transition-colors">
+        <i class="fas fa-code text-lg mb-1"></i>
+        Projects
+      </a>
+      <span class="absolute bottom-0 w-0 h-0.5 bg-violet-600 transition-all duration-300 group-hover:w-full"></span>
+    </li>
+  </ul>
+</nav>
+
+  <!-- Main Section -->
+<section 
+  id="home"
+  class="relative min-h-screen flex flex-col md:flex-row items-center justify-center py-20 px-8 space-y-10 md:space-y-0 md:space-x-12 overflow-hidden">
+
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+
+  <div class="relative z-10 text-center md:text-left max-w-xl">
+
+    <!-- Custom Styled Heading -->
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-wide mb-6 glowing-text animate-pulse shadow-lg">
+      Harshitha's <span class="text-indigo-400">Portfolio</span>
+    </h1>
+
+    <!-- Quote with Unique Styling -->
+    <blockquote class="text-white text-lg italic border-l-4 border-indigo-400 pl-6 pr-4 py-4 bg-white/10 rounded-lg shadow-md backdrop-blur-sm">
+      <p>
+        “Behind every dataset lies a story, and within every line of code, a spark of creativity. This portfolio is an invitation to witness the fusion of business and programming, where passion drives progress, and every challenge is an opportunity to innovate. Welcome to the future I’m building, one idea at a time.”
+      </p>
+    </blockquote>
+
+  </div>
+</section>
+
+
+  <!-- Reamining Sections -->
+ <section id="about" class="relative hero-section flex flex-col md:flex-row items-center justify-center p-8 overflow-hidden min-h-screen">
+  <!-- Background GIF -->
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-gray-900 bg-opacity-60 z-0"></div>
+  <!-- Main content -->
+<div class="relative z-10 text-center md:text-center md:w-1/2 p-4 md:pr-12 mt-8 md:mt-0 order-2 md:order-1">
+      <h3 class="text-3xl md:text-4xl font-semibold text-black-300 mb-4">About Me</h3>
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 text-black-400 animate-glow-pulse">
+      Hi 👋 I'm Harshitha!
+    </h1>
+    <p class="text-lg text-black-200 mb-10 max-w-xl mx-auto md:mx-0">
+      A passionate Financial Scientist and Business Analyst blending innovation with insights to solve real-world problems. Behind every dataset lies a story; within every line of code, a spark of creativity.
+    </p>
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row items-center sm:justify-start gap-4">
+      <a href="#projects" class="btn border-2 border-violet-500 bg-violet-500 hover:bg-violet-600 text-white py-2 px-6 rounded shadow transition duration-300">
+        View Projects
+      </a>
+      <a href="/resume.pdf" download class="btn border-2 border-violet-400 hover:bg-violet-500 hover:text-white text-violet-300 py-2 px-6 rounded transition duration-300">
+        Download Resume
+      </a>
+    </div>
+  </div>
+</section>
+  
+  <section id="career" class="py-16 px-6 md:px-20 bg-gray-50 text-gray-800 animate-fade-in-up">
+  <h2 class="text-4xl font-bold text-center text-black-600 mb-12">Career Summary</h2> 
+  <p class="text-center max-w-3xl mx-auto text-gray-700 text-lg mb-8">
+    Master’s student in Business Analytics with strong skills in data modeling, data visualization, and business intelligence tools. Experienced in AI-driven applications, front-end reporting, and KPI tracking. Available from December 2025 for full-time roles across the U.S.
+  </p>
+  </section>
+
+ <section id="education-infographic" class="py-16 px-6 md:px-20 bg-gradient-to-br from-white via-violet-50 to-white text-gray-800">
+  <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center text-violet-700">Education</h2>
+
+  <div class="education-grid max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+
+    <!-- University of North Texas -->
+    <div class="education-card flex flex-col items-center bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6nsth-dM_LlSDgCV8kS3817LWGRyJKWTJY9hg93mpuCVL-r3LDD2ybfENmnhRCDM4xA&usqp=CAU" alt="University of North Texas Logo" class="w-24 h-24 mb-6 object-contain rounded-full" />
+      <h3 class="text-2xl font-semibold text-violet-700 mb-1">University of North Texas</h3>
+      <p class="text-sm text-gray-600 mb-2">Texas, United States</p>
+      <div class="date text-violet-600 font-medium mb-3">Jan 2024 – Dec 2025</div>
+      <p class="text-center text-gray-700">Master of Science in Business Analytics</p>
+    </div>
+
+    <!-- Osmania University -->
+    <div class="education-card flex flex-col items-center bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+      <img src="https://www.osmania.ac.in/images/ou.png" alt="Osmania University Logo" class="w-24 h-24 mb-6 object-contain rounded-full" />
+      <h3 class="text-2xl font-semibold text-violet-700 mb-1">Osmania University</h3>
+      <p class="text-sm text-gray-600 mb-2">Hyderabad, India</p>
+      <div class="date text-violet-600 font-medium mb-3">Jun 2020 – Apr 2023</div>
+      <p class="text-center text-gray-700">Bachelor of Commerce in Computer Science</p>
+    </div>
+
+    <!-- Johnson Grammar School -->
+    <div class="education-card flex flex-col items-center bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO4ytxOUwRQWK5ESMbbsqzI18M8Ti3z0e57A&s" alt="Johnson Grammar School Logo" class="w-24 h-24 mb-6 object-contain rounded-full" />
+      <h3 class="text-2xl font-semibold text-violet-700 mb-1">Johnson Grammar School</h3>
+      <p class="text-sm text-gray-600 mb-2">Hyderabad, India</p>
+      <div class="date text-violet-600 font-medium mb-3">Jun 2005 – May 2018</div>
+      <p class="text-center text-gray-700">High School Diploma – CBSE Curriculum</p>
+    </div>
+
+  </div>
+</section>
+
+  
+
+  <section id="experience" class="py-16 px-6 md:px-20 bg-white text-gray-800">
+  <h2 class="text-4xl font-bold text-center text-black-600 mb-12">Professional Experience</h2>
+
+  <!-- Container for text + image side-by-side -->
+  <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-start gap-10">
+
+    <!-- Left Side: Experience Content -->
+    <div class="md:w-2/3 space-y-10">
+
+      <!-- Internship -->
+      <div class="experience-card bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 opacity-0 translate-y-8 animate-fade-in">
+        <h3 class="text-2xl font-semibold text-violet-600 mb-3">Entrepreneurship/Business Development Intern</h3>
+        <p class="font-medium text-gray-700 mb-1">NSIC – Hyderabad, India | May 2022 – March 2023</p>
+        <ul class="list-disc list-inside text-gray-600 space-y-2">
+          <li>Analyzed market trends, financial feasibility, and industrial awareness to support small business growth.</li>
+          <li>Collected and interpreted market data to evaluate business patterns and develop actionable insights.</li>
+          <li>Built financial models to assess business viability based on sales, demand, and industry growth trends.</li>
+        </ul>
+      </div>
+
+      <!-- Mentor Role -->
+      <div class="experience-card bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 opacity-0 translate-y-8 animate-fade-in delay-150">
+        <h3 class="text-2xl font-semibold text-violet-600 mb-3">Counselor/Data Insights Mentor</h3>
+        <p class="font-medium text-gray-700 mb-1">Voice 4 Girls – India | August 2021 – March 2022</p>
+        <ul class="list-disc list-inside text-gray-600 space-y-2">
+          <li>Mentored students to develop personal and academic skills, improving engagement and knowledge retention.</li>
+          <li>Analyzed learning patterns and adapted mentoring techniques based on qualitative and quantitative insights.</li>
+          <li>Used surveys and feedback to identify learning gaps and enhance counseling effectiveness.</li>
+          <li>Improved student confidence and problem-solving skills through data-driven approaches.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Side: Animated Profile Image -->
+    
+    </div>
+  </div>
+</section>
+
+
+      <section id="technical-analytical-skills" class="py-20 px-6 bg-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-violet-600 text-center mb-12">Technical & Analytical Skills</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+      <!-- Programming Languages -->
+      <div>
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Programming Languages</h3>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fab fa-python text-blue-500"></i> Python
+            </span>
+            <span class="font-semibold">90%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 90%;"></div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fab fa-r-project text-blue-600"></i> R
+            </span>
+            <span class="font-semibold">85%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 85%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Analysis Libraries -->
+      <div>
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Data Analysis Libraries</h3>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fas fa-cube text-indigo-600"></i> NumPy
+            </span>
+            <span class="font-semibold">88%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 88%;"></div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fas fa-database text-green-600"></i> Pandas
+            </span>
+            <span class="font-semibold">89%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 89%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BI & Visualization -->
+      <div>
+        <h3 class="text-xl font-bold text-blue-700 mb-4">BI & Visualization Tools</h3>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fab fa-microsoft text-teal-600"></i> Power BI
+            </span>
+            <span class="font-semibold">82%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 82%;"></div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fas fa-chart-bar text-blue-600"></i> Tableau
+            </span>
+            <span class="font-semibold">87%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 87%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div>
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Databases</h3>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fas fa-database text-blue-700"></i> MySQL
+            </span>
+            <span class="font-semibold">86%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 86%;"></div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fas fa-leaf text-green-700"></i> MongoDB
+            </span>
+            <span class="font-semibold">80%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Big Data & Cloud -->
+      <div>
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Cloud & Big Data</h3>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fas fa-database text-yellow-700"></i> Big Data
+            </span>
+            <span class="font-semibold">80%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 80%;"></div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fab fa-google text-blue-600"></i> GCP
+            </span>
+            <span class="font-semibold">80%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Productivity Tools -->
+      <div>
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Productivity Tools</h3>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fas fa-file-excel text-green-600"></i> MS Excel
+            </span>
+            <span class="font-semibold">90%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 90%;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    
+<section id="technical-analytical-skills" class="py-20 px-6 bg-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-extrabold text-indigo-700 text-center mb-12 tracking-wide uppercase">
+      Technical & Analytical Skills
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+      <!-- Example Skill Block -->
+      <div>
+        <h3 class="text-2xl font-semibold text-blue-800 mb-4">Programming Languages</h3>
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fab fa-python text-blue-500"></i> Python
+            </span>
+            <span class="font-bold text-gray-900">90%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 90%;"></div>
+          </div>
+        </div>
+
+        <!-- Repeat similar pattern for other skills -->
+
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="flex items-center gap-2">
+              <i class="fab fa-r-project text-blue-600"></i> R
+            </span>
+            <span class="font-bold text-gray-900">85%</span>
+          </div>
+          <div class="w-full bg-gray-300 rounded-full h-2">
+            <div class="bg-blue-500 h-2 rounded-full" style="width: 85%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Continue other sections below similarly, just replace the percentage <span> with: -->
+      <!-- <span class="font-bold text-gray-900">82%</span> or any other Tailwind bright color -->
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer HTML -->
+<footer class="footer">
+  <!-- Column 1: Intro -->
+  <div style="flex: 1; min-width: 280px; margin-bottom: 20px;">
+    <h3>Harshitha's Portfolio</h3>
+    <p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p>
+  </div>
+
+  <!-- Live Date and Time -->
+  <div id="live-date-time" style="font-size: 0.9rem; color: #555;"></div>
+  <div id="live-date-time" style="font-size: 0.9rem; color: white;"></div>
+
+</div>  
+</footer>
+
+   <!-- Social Links Sidebar (fixed on left) -->
+<div class="fixed-sidebar" aria-label="Social media links">
+  <a
+    href="https://www.linkedin.com/in/harshithasreiya"
+    title="LinkedIn"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-icon"
+    aria-label="LinkedIn"
+  >
+    <i class="fab fa-linkedin"></i>
+    <span class="tooltip">LinkedIn</span>
+  </a>
+
+  <a
+    href="https://github.com/harshi1744"
+    title="GitHub"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-icon"
+    aria-label="GitHub"
+  >
+    <i class="fab fa-github"></i>
+    <span class="tooltip">GitHub</span>
+  </a>
+
+  <a
+    href="mailto:harshithasrieya@gmail.com"
+    title="Email"
+    class="social-icon"
+    aria-label="Email"
+  >
+    <i class="fas fa-envelope"></i>
+    <span class="tooltip">Email</span>
+  </a>
+</div>
+
+
+
+    <script>
+  document.querySelectorAll('.view-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.project-card');
+      card.classList.toggle('expanded');
+    });
+  });
+
+  function updateDateTime() {
+    const now = new Date();
+    const dateTimeStr = now.toLocaleString('en-IN', {
+      weekday: 'short',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+    document.getElementById('live-date-time').textContent = `Current Date & Time: ${dateTimeStr}`;
+  }
+  // Initial call and interval setup
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+ 
+</script>
+    
+</body>
+
+</html>
